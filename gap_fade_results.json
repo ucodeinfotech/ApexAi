@@ -1,0 +1,543 @@
+{
+  "timestamp": "2026-06-24 19:19:36.774651",
+  "slippage_pct": 0.05,
+  "stocks": 395,
+  "overall": {
+    "label": "All",
+    "trades": 401412,
+    "stocks": 395,
+    "win_rate": 58.8,
+    "avg_ret": 0.36,
+    "median_ret": 0.42,
+    "std_ret": 2.71,
+    "total_ret": Infinity,
+    "max_dd": -91.4,
+    "sharpe": 2.14,
+    "avg_win": 1.9,
+    "avg_loss": -1.83,
+    "profit_factor": 1.48
+  },
+  "by_bucket": {
+    "short_0.5-0.75": {
+      "label": "short_0.5-0.75",
+      "trades": 104611,
+      "stocks": 395,
+      "win_rate": 59.3,
+      "avg_ret": 0.25,
+      "median_ret": 0.37,
+      "std_ret": 2.19,
+      "total_ret": 4.541801878721704e+102,
+      "max_dd": -63.5,
+      "sharpe": 1.78,
+      "avg_win": 1.54,
+      "avg_loss": -1.64,
+      "profit_factor": 1.37
+    },
+    "short_0.75-1.0": {
+      "label": "short_0.75-1.0",
+      "trades": 67522,
+      "stocks": 395,
+      "win_rate": 60.9,
+      "avg_ret": 0.31,
+      "median_ret": 0.48,
+      "std_ret": 2.36,
+      "total_ret": 1.8060431787432085e+85,
+      "max_dd": -89.3,
+      "sharpe": 2.1,
+      "avg_win": 1.66,
+      "avg_loss": -1.8,
+      "profit_factor": 1.45
+    },
+    "short_1.5-2.0": {
+      "label": "short_1.5-2.0",
+      "trades": 22520,
+      "stocks": 395,
+      "win_rate": 63.3,
+      "avg_ret": 0.58,
+      "median_ret": 0.78,
+      "std_ret": 2.87,
+      "total_ret": 2.1109080571340494e+54,
+      "max_dd": -56.4,
+      "sharpe": 3.19,
+      "avg_win": 2.17,
+      "avg_loss": -2.18,
+      "profit_factor": 1.73
+    },
+    "short_1.0-1.25": {
+      "label": "short_1.0-1.25",
+      "trades": 35357,
+      "stocks": 395,
+      "win_rate": 62.2,
+      "avg_ret": 0.41,
+      "median_ret": 0.58,
+      "std_ret": 2.48,
+      "total_ret": 9.399524958150967e+59,
+      "max_dd": -72.4,
+      "sharpe": 2.62,
+      "avg_win": 1.8,
+      "avg_loss": -1.89,
+      "profit_factor": 1.57
+    },
+    "short_1.25-1.5": {
+      "label": "short_1.25-1.5",
+      "trades": 21946,
+      "stocks": 394,
+      "win_rate": 63.2,
+      "avg_ret": 0.48,
+      "median_ret": 0.68,
+      "std_ret": 2.65,
+      "total_ret": 2.4853719201621843e+44,
+      "max_dd": -52.5,
+      "sharpe": 2.88,
+      "avg_win": 1.94,
+      "avg_loss": -2.03,
+      "profit_factor": 1.65
+    },
+    "short_2.0+": {
+      "label": "short_2.0+",
+      "trades": 28910,
+      "stocks": 395,
+      "win_rate": 61.9,
+      "avg_ret": 0.93,
+      "median_ret": 0.94,
+      "std_ret": 3.69,
+      "total_ret": 1.8351491177008398e+109,
+      "max_dd": -70.3,
+      "sharpe": 3.98,
+      "avg_win": 2.95,
+      "avg_loss": -2.37,
+      "profit_factor": 2.03
+    },
+    "short_0-0.5": {
+      "label": "short_0-0.5",
+      "trades": 6146,
+      "stocks": 392,
+      "win_rate": 58.4,
+      "avg_ret": 0.18,
+      "median_ret": 0.3,
+      "std_ret": 2.04,
+      "total_ret": 1739037.9,
+      "max_dd": -49.1,
+      "sharpe": 1.4,
+      "avg_win": 1.39,
+      "avg_loss": -1.54,
+      "profit_factor": 1.28
+    },
+    "long_0.75-1.0": {
+      "label": "long_0.75-1.0",
+      "trades": 23565,
+      "stocks": 395,
+      "win_rate": 52.8,
+      "avg_ret": 0.15,
+      "median_ret": 0.14,
+      "std_ret": 2.42,
+      "total_ret": 111494196385521.7,
+      "max_dd": -95.0,
+      "sharpe": 0.97,
+      "avg_win": 1.76,
+      "avg_loss": -1.66,
+      "profit_factor": 1.19
+    },
+    "long_1.5-2.0": {
+      "label": "long_1.5-2.0",
+      "trades": 11253,
+      "stocks": 394,
+      "win_rate": 57.1,
+      "avg_ret": 0.4,
+      "median_ret": 0.43,
+      "std_ret": 2.87,
+      "total_ret": 4.087664165255617e+19,
+      "max_dd": -72.8,
+      "sharpe": 2.22,
+      "avg_win": 2.2,
+      "avg_loss": -2.0,
+      "profit_factor": 1.47
+    },
+    "long_0.5-0.75": {
+      "label": "long_0.5-0.75",
+      "trades": 35112,
+      "stocks": 395,
+      "win_rate": 50.1,
+      "avg_ret": 0.05,
+      "median_ret": 0.01,
+      "std_ret": 2.24,
+      "total_ret": 313176.5,
+      "max_dd": -97.7,
+      "sharpe": 0.34,
+      "avg_win": 1.63,
+      "avg_loss": -1.55,
+      "profit_factor": 1.06
+    },
+    "long_0-0.5": {
+      "label": "long_0-0.5",
+      "trades": 967,
+      "stocks": 361,
+      "win_rate": 48.1,
+      "avg_ret": -0.04,
+      "median_ret": -0.07,
+      "std_ret": 2.13,
+      "total_ret": -44.7,
+      "max_dd": -61.2,
+      "sharpe": -0.29,
+      "avg_win": 1.52,
+      "avg_loss": -1.49,
+      "profit_factor": 0.95
+    },
+    "long_2.0+": {
+      "label": "long_2.0+",
+      "trades": 19401,
+      "stocks": 395,
+      "win_rate": 56.8,
+      "avg_ret": 0.93,
+      "median_ret": 0.56,
+      "std_ret": 5.04,
+      "total_ret": 9.21855681776598e+70,
+      "max_dd": -73.9,
+      "sharpe": 2.92,
+      "avg_win": 3.52,
+      "avg_loss": -2.48,
+      "profit_factor": 1.87
+    },
+    "long_1.0-1.25": {
+      "label": "long_1.0-1.25",
+      "trades": 14326,
+      "stocks": 395,
+      "win_rate": 53.2,
+      "avg_ret": 0.18,
+      "median_ret": 0.16,
+      "std_ret": 2.5,
+      "total_ret": 108253897126.7,
+      "max_dd": -71.6,
+      "sharpe": 1.12,
+      "avg_win": 1.87,
+      "avg_loss": -1.76,
+      "profit_factor": 1.22
+    },
+    "long_1.25-1.5": {
+      "label": "long_1.25-1.5",
+      "trades": 9771,
+      "stocks": 395,
+      "win_rate": 56.6,
+      "avg_ret": 0.34,
+      "median_ret": 0.35,
+      "std_ret": 2.63,
+      "total_ret": 546697019835373.3,
+      "max_dd": -64.9,
+      "sharpe": 2.02,
+      "avg_win": 2.0,
+      "avg_loss": -1.85,
+      "profit_factor": 1.42
+    }
+  },
+  "yearly": [
+    {
+      "label": "2016",
+      "trades": 9979,
+      "stocks": 333,
+      "win_rate": 61.4,
+      "avg_ret": 0.61,
+      "median_ret": 0.57,
+      "std_ret": 2.78,
+      "total_ret": 4.5598926844597844e+26,
+      "max_dd": -65.7,
+      "sharpe": 3.47,
+      "avg_win": 2.08,
+      "avg_loss": -1.75,
+      "profit_factor": 1.91
+    },
+    {
+      "label": "2017",
+      "trades": 36112,
+      "stocks": 358,
+      "win_rate": 62.7,
+      "avg_ret": 0.41,
+      "median_ret": 0.51,
+      "std_ret": 2.24,
+      "total_ret": 3.370290684725696e+61,
+      "max_dd": -71.1,
+      "sharpe": 2.88,
+      "avg_win": 1.6,
+      "avg_loss": -1.62,
+      "profit_factor": 1.68
+    },
+    {
+      "label": "2018",
+      "trades": 40753,
+      "stocks": 375,
+      "win_rate": 61.4,
+      "avg_ret": 0.53,
+      "median_ret": 0.54,
+      "std_ret": 2.56,
+      "total_ret": 1.091535494846173e+90,
+      "max_dd": -47.8,
+      "sharpe": 3.3,
+      "avg_win": 1.96,
+      "avg_loss": -1.75,
+      "profit_factor": 1.79
+    },
+    {
+      "label": "2019",
+      "trades": 38806,
+      "stocks": 377,
+      "win_rate": 61.3,
+      "avg_ret": 0.48,
+      "median_ret": 0.53,
+      "std_ret": 2.61,
+      "total_ret": 3.0433890906725644e+76,
+      "max_dd": -72.9,
+      "sharpe": 2.9,
+      "avg_win": 1.91,
+      "avg_loss": -1.8,
+      "profit_factor": 1.69
+    },
+    {
+      "label": "2020",
+      "trades": 53322,
+      "stocks": 379,
+      "win_rate": 57.9,
+      "avg_ret": 0.49,
+      "median_ret": 0.46,
+      "std_ret": 3.44,
+      "total_ret": 6.014704057333147e+100,
+      "max_dd": -84.1,
+      "sharpe": 2.24,
+      "avg_win": 2.44,
+      "avg_loss": -2.21,
+      "profit_factor": 1.52
+    },
+    {
+      "label": "2021",
+      "trades": 46860,
+      "stocks": 385,
+      "win_rate": 59.5,
+      "avg_ret": 0.34,
+      "median_ret": 0.47,
+      "std_ret": 2.62,
+      "total_ret": 8.435915400471555e+64,
+      "max_dd": -79.4,
+      "sharpe": 2.09,
+      "avg_win": 1.89,
+      "avg_loss": -1.93,
+      "profit_factor": 1.44
+    },
+    {
+      "label": "2022",
+      "trades": 47772,
+      "stocks": 388,
+      "win_rate": 56.5,
+      "avg_ret": 0.23,
+      "median_ret": 0.31,
+      "std_ret": 2.5,
+      "total_ret": 3.222639470205376e+43,
+      "max_dd": -81.6,
+      "sharpe": 1.47,
+      "avg_win": 1.8,
+      "avg_loss": -1.81,
+      "profit_factor": 1.29
+    },
+    {
+      "label": "2023",
+      "trades": 34446,
+      "stocks": 391,
+      "win_rate": 58.5,
+      "avg_ret": 0.28,
+      "median_ret": 0.34,
+      "std_ret": 2.95,
+      "total_ret": 1.9643594177030785e+38,
+      "max_dd": -63.6,
+      "sharpe": 1.48,
+      "avg_win": 1.62,
+      "avg_loss": -1.63,
+      "profit_factor": 1.41
+    },
+    {
+      "label": "2024",
+      "trades": 38472,
+      "stocks": 391,
+      "win_rate": 58.2,
+      "avg_ret": 0.32,
+      "median_ret": 0.4,
+      "std_ret": 2.64,
+      "total_ret": 2.6030417742899214e+49,
+      "max_dd": -70.9,
+      "sharpe": 1.92,
+      "avg_win": 1.88,
+      "avg_loss": -1.86,
+      "profit_factor": 1.41
+    },
+    {
+      "label": "2025",
+      "trades": 34308,
+      "stocks": 394,
+      "win_rate": 57.9,
+      "avg_ret": 0.34,
+      "median_ret": 0.37,
+      "std_ret": 2.44,
+      "total_ret": 2.06997766119125e+48,
+      "max_dd": -47.4,
+      "sharpe": 2.22,
+      "avg_win": 1.82,
+      "avg_loss": -1.7,
+      "profit_factor": 1.48
+    },
+    {
+      "label": "2026",
+      "trades": 20582,
+      "stocks": 394,
+      "win_rate": 49.0,
+      "avg_ret": -0.06,
+      "median_ret": -0.05,
+      "std_ret": 2.4,
+      "total_ret": -100.0,
+      "max_dd": -100.0,
+      "sharpe": -0.41,
+      "avg_win": 1.72,
+      "avg_loss": -1.78,
+      "profit_factor": 0.93
+    }
+  ],
+  "best_stocks": [
+    {
+      "sym": "OMAXE",
+      "trades": 1152,
+      "avg_ret": 0.8905034722222221,
+      "win_rate": 66.1
+    },
+    {
+      "sym": "KIOCL",
+      "trades": 1315,
+      "avg_ret": 0.822296577946768,
+      "win_rate": 60.0
+    },
+    {
+      "sym": "CHOLAHLDNG",
+      "trades": 1060,
+      "avg_ret": 0.7765849056603773,
+      "win_rate": 66.5
+    },
+    {
+      "sym": "INDOSTAR",
+      "trades": 983,
+      "avg_ret": 0.772115971515768,
+      "win_rate": 62.8
+    },
+    {
+      "sym": "ICRA",
+      "trades": 1134,
+      "avg_ret": 0.7655114638447972,
+      "win_rate": 71.4
+    },
+    {
+      "sym": "SFL",
+      "trades": 1252,
+      "avg_ret": 0.7618130990415335,
+      "win_rate": 67.0
+    },
+    {
+      "sym": "STARCEMENT",
+      "trades": 1247,
+      "avg_ret": 0.7412269446672013,
+      "win_rate": 66.3
+    },
+    {
+      "sym": "WESTLIFE",
+      "trades": 903,
+      "avg_ret": 0.7304761904761905,
+      "win_rate": 64.7
+    },
+    {
+      "sym": "THOMASCOOK",
+      "trades": 1396,
+      "avg_ret": 0.7286103151862464,
+      "win_rate": 63.7
+    },
+    {
+      "sym": "SADBHAV",
+      "trades": 1578,
+      "avg_ret": 0.7283269961977186,
+      "win_rate": 54.7
+    }
+  ],
+  "worst_stocks": [
+    {
+      "sym": "UPL",
+      "trades": 852,
+      "avg_ret": -0.014553990610328634,
+      "win_rate": 53.1
+    },
+    {
+      "sym": "RECLTD",
+      "trades": 988,
+      "avg_ret": -0.037601214574898775,
+      "win_rate": 49.1
+    },
+    {
+      "sym": "HINDCOPPER",
+      "trades": 1125,
+      "avg_ret": -0.0612088888888889,
+      "win_rate": 51.6
+    },
+    {
+      "sym": "JINDALSTEL",
+      "trades": 1290,
+      "avg_ret": -0.06135658914728682,
+      "win_rate": 50.3
+    },
+    {
+      "sym": "SAIL",
+      "trades": 1212,
+      "avg_ret": -0.07556930693069307,
+      "win_rate": 49.3
+    },
+    {
+      "sym": "DLF",
+      "trades": 1070,
+      "avg_ret": -0.08104672897196262,
+      "win_rate": 48.8
+    },
+    {
+      "sym": "PFC",
+      "trades": 974,
+      "avg_ret": -0.08713552361396304,
+      "win_rate": 49.8
+    },
+    {
+      "sym": "NATIONALUM",
+      "trades": 1273,
+      "avg_ret": -0.13276512175962293,
+      "win_rate": 49.1
+    },
+    {
+      "sym": "VEDL",
+      "trades": 1254,
+      "avg_ret": -0.1373524720893142,
+      "win_rate": 48.0
+    },
+    {
+      "sym": "INOXWIND",
+      "trades": 153,
+      "avg_ret": -0.27607843137254906,
+      "win_rate": 50.3
+    }
+  ],
+  "best_params": {
+    "stop_loss": 0.5,
+    "take_profit": 3.0,
+    "sharpe": 9.35
+  },
+  "final_with_stops": {
+    "label": "SL=0.5% TP=3.0%",
+    "trades": 401412,
+    "stocks": 395,
+    "win_rate": 58.8,
+    "avg_ret": 0.73,
+    "median_ret": 0.42,
+    "std_ret": 1.24,
+    "total_ret": Infinity,
+    "max_dd": -7.6,
+    "sharpe": 9.35,
+    "avg_win": 1.55,
+    "avg_loss": -0.44,
+    "profit_factor": 5.07
+  }
+}

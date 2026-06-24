@@ -1,0 +1,394 @@
+{
+  "analysis_date": "2026-06-24 16:46:13.208874",
+  "daily_deep": {
+    "total_obs": 856439,
+    "candle_patterns": {
+      "Bullish_Engulfing": {
+        "count": 73979,
+        "avg_next_ret": 0.061,
+        "win_rate": 47.2,
+        "sharpe": 0.37
+      },
+      "Bearish_Engulfing": {
+        "count": 225502,
+        "avg_next_ret": 0.015,
+        "win_rate": 48.1,
+        "sharpe": 0.1
+      },
+      "Doji": {
+        "count": 98629,
+        "avg_next_ret": 0.092,
+        "win_rate": 48.2,
+        "sharpe": 0.58
+      },
+      "Hammer": {
+        "count": 28056,
+        "avg_next_ret": 0.092,
+        "win_rate": 48.0,
+        "sharpe": 0.6
+      },
+      "Shooting_Star": {
+        "count": 42870,
+        "avg_next_ret": 0.081,
+        "win_rate": 48.1,
+        "sharpe": 0.41
+      },
+      "prev_high_break": {
+        "count": 97697,
+        "avg_next_ret": 0.213,
+        "win_rate": 48.6
+      },
+      "prev_low_break": {
+        "count": 60735,
+        "avg_next_ret": 0.104,
+        "win_rate": 50.8
+      },
+      "Inside Bar": {
+        "count": 148955,
+        "avg_next_ret": 0.074,
+        "win_rate": 47.5
+      },
+      "Outside Bar": {
+        "count": 85909,
+        "avg_next_ret": 0.024,
+        "win_rate": 47.5
+      },
+      "Gap_Up_Bear_Engulf": {
+        "count": 111746,
+        "avg_next_ret": 0.036,
+        "win_rate": 48.1
+      },
+      "Gap_Dn_Bull_Engulf": {
+        "count": 31156,
+        "avg_next_ret": 0.074,
+        "win_rate": 47.6
+      },
+      "First_Trade_Day_Month": {
+        "count": 42938,
+        "avg_ret": 0.453,
+        "avg_next_ret": 0.097,
+        "win_rate": 48.3
+      },
+      "Last_Trade_Day_Month": {
+        "count": 42938,
+        "avg_ret": 0.243,
+        "avg_next_ret": 0.097,
+        "win_rate": 48.3
+      },
+      "Next_Day_After_Low_Vol_Q1": {
+        "count": 214110,
+        "avg_next_ret": 0.076,
+        "win_rate": 48.1
+      },
+      "Next_Day_After_High_Vol_Q4": {
+        "count": 214112,
+        "avg_next_ret": 0.117,
+        "win_rate": 48.8
+      }
+    },
+    "gap_by_dayofweek": {
+      "Monday_gap_up": {
+        "count": 60494,
+        "avg_intra_ret": -0.386,
+        "fill_rate": 61.2
+      },
+      "Monday_gap_dn": {
+        "count": 27656,
+        "avg_intra_ret": -0.06,
+        "fill_rate": 48.2
+      },
+      "Tuesday_gap_up": {
+        "count": 59008,
+        "avg_intra_ret": -0.469,
+        "fill_rate": 62.8
+      },
+      "Tuesday_gap_dn": {
+        "count": 18959,
+        "avg_intra_ret": 0.608,
+        "fill_rate": 60.6
+      },
+      "Wednesday_gap_up": {
+        "count": 56292,
+        "avg_intra_ret": -0.421,
+        "fill_rate": 62.5
+      },
+      "Wednesday_gap_dn": {
+        "count": 20783,
+        "avg_intra_ret": 0.684,
+        "fill_rate": 59.1
+      },
+      "Thursday_gap_up": {
+        "count": 56084,
+        "avg_intra_ret": -0.391,
+        "fill_rate": 63.1
+      },
+      "Thursday_gap_dn": {
+        "count": 23044,
+        "avg_intra_ret": 0.424,
+        "fill_rate": 56.3
+      },
+      "Friday_gap_up": {
+        "count": 53416,
+        "avg_intra_ret": -0.467,
+        "fill_rate": 63.8
+      },
+      "Friday_gap_dn": {
+        "count": 23646,
+        "avg_intra_ret": 0.469,
+        "fill_rate": 54.8
+      }
+    },
+    "serial_correlation": {
+      "lag_1d": 0.022,
+      "lag_2d": 0.003,
+      "lag_3d": 0.002,
+      "lag_5d": 0.008,
+      "lag_10d": 0.011,
+      "lag_21d": -0.006
+    },
+    "avg_daily_ret": 0.076,
+    "median_daily_ret": -0.048,
+    "daily_win_rate": 48.1,
+    "avg_range": Infinity
+  },
+  "multi_timeframe": {
+    "trend_alignment": {
+      "avg_next_ret": 0.12,
+      "next_win_rate": 48.18,
+      "n": 124911
+    },
+    "trend_alignment_detail": [
+      {
+        "regime": "All_TF_Bullish",
+        "n": 357.43859649122805,
+        "avg_ret": 2.359421052631579,
+        "avg_next_ret": 0.171140350877193,
+        "next_win_rate": 47.56666666666667,
+        "avg_range": 4.110701754385965
+      },
+      {
+        "regime": "Mixed_TF",
+        "n": 1833.982456140351,
+        "avg_ret": -0.3327894736842105,
+        "avg_next_ret": 0.07710526315789475,
+        "next_win_rate": 48.796491228070174,
+        "avg_range": 3.627719298245614
+      }
+    ],
+    "pullback_entries": [
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "n": 3801.061403508772,
+        "avg_5bar_ret": 0.11603070175438596,
+        "win_rate": 54.661403508771926
+      }
+    ],
+    "pullback_detail": [
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "3MINDIA",
+        "n": 2708,
+        "avg_5bar_ret": 0.0909,
+        "win_rate": 54.0
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "3MINDIA",
+        "n": 3311,
+        "avg_5bar_ret": 0.0596,
+        "win_rate": 57.0
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "ADANIGREEN",
+        "n": 2470,
+        "avg_5bar_ret": 0.4032,
+        "win_rate": 54.4
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "ADANIGREEN",
+        "n": 4052,
+        "avg_5bar_ret": 0.056,
+        "win_rate": 47.2
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "AMBUJACEM",
+        "n": 3889,
+        "avg_5bar_ret": 0.1014,
+        "win_rate": 57.6
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "AMBUJACEM",
+        "n": 5704,
+        "avg_5bar_ret": 0.0102,
+        "win_rate": 51.6
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "ASTRAL",
+        "n": 3656,
+        "avg_5bar_ret": 0.0982,
+        "win_rate": 53.4
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "ASTRAL",
+        "n": 5306,
+        "avg_5bar_ret": 0.0748,
+        "win_rate": 58.2
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "BAJAJCON",
+        "n": 2817,
+        "avg_5bar_ret": 0.0723,
+        "win_rate": 57.2
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "BAJAJCON",
+        "n": 3999,
+        "avg_5bar_ret": 0.0371,
+        "win_rate": 57.6
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "BANKBARODA",
+        "n": 3287,
+        "avg_5bar_ret": 0.0858,
+        "win_rate": 53.6
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "BANKBARODA",
+        "n": 5145,
+        "avg_5bar_ret": 0.0217,
+        "win_rate": 53.0
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "BERGEPAINT",
+        "n": 4183,
+        "avg_5bar_ret": 0.1092,
+        "win_rate": 55.2
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "BERGEPAINT",
+        "n": 5917,
+        "avg_5bar_ret": 0.0135,
+        "win_rate": 51.4
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "BLUESTARCO",
+        "n": 3172,
+        "avg_5bar_ret": 0.1323,
+        "win_rate": 55.2
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "BLUESTARCO",
+        "n": 4695,
+        "avg_5bar_ret": 0.0905,
+        "win_rate": 56.2
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "CANBK",
+        "n": 3280,
+        "avg_5bar_ret": 0.0936,
+        "win_rate": 56.8
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "CANBK",
+        "n": 5169,
+        "avg_5bar_ret": 0.0251,
+        "win_rate": 49.8
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "15m",
+        "sym": "CDSL",
+        "n": 2903,
+        "avg_5bar_ret": 0.1674,
+        "win_rate": 56.0
+      },
+      {
+        "higher_tf": "1h",
+        "lower_tf": "5m",
+        "sym": "CDSL",
+        "n": 4363,
+        "avg_5bar_ret": 0.101,
+        "win_rate": 59.0
+      }
+    ],
+    "daily_sr_breakout": {
+      "avg_next_ret": -0.21,
+      "win_rate": 22.34,
+      "n": 333837
+    },
+    "daily_sr_breakout_detail": [
+      {
+        "side": "above_daily_high",
+        "tf": "5m",
+        "n": 2928.3947368421054,
+        "avg_next_ret": -0.20987631578947366,
+        "win_rate": 22.33684210526316
+      }
+    ],
+    "volume_patterns": [
+      {
+        "direction": "vol_spike_dn",
+        "n": 81.08771929824562,
+        "avg_next_ret": 0.056122807017543866,
+        "win_rate": 50.0719298245614
+      },
+      {
+        "direction": "vol_spike_up",
+        "n": 182.98245614035088,
+        "avg_next_ret": 0.24052631578947367,
+        "win_rate": 49.13333333333333
+      }
+    ],
+    "gap_volume": {},
+    "volatility_regime": [
+      {
+        "regime": "atr_contracting",
+        "n": 274.5263157894737,
+        "avg_next_ret": 0.10714035087719298,
+        "win_rate": 47.96140350877193
+      },
+      {
+        "regime": "atr_expanding",
+        "n": 286.9122807017544,
+        "avg_next_ret": 0.1506842105263158,
+        "win_rate": 49.910526315789475
+      }
+    ]
+  },
+  "samples_stocks": 57
+}

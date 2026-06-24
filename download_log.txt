@@ -1,0 +1,15 @@
+Already downloaded: 141 stocks
+Still needed: 16 stocks
+Remaining: ['SAIL', 'SBICARD', 'SRF', 'STARHEALTH', 'SUNTV', 'SUPREMEIND', 'SYNGENE', 'TATACOMM', 'TORNTPOWER', 'TRIDENT', 'UBL', 'VOLTAS', 'WESTLIFE', 'YESBANK', 'BANDHANBNK', 'NBCC']
+
+Logging in...
+OK
+
+No tokens found for: ['SBICARD', 'WESTLIFE']
+Stocks to download: 14
+
+============================================================
+DOWNLOADING 14 REMAINING STOCKS
+============================================================
+
+[1/14] SAIL (token: 2963)

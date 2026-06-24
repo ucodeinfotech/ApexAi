@@ -1,0 +1,373 @@
+{
+ "strategy_summary": {
+  "Vol_Breakout_2x": {
+   "avg_sharpe": 0.16739884393063584,
+   "med_sharpe": 0.18,
+   "std_sharpe": 0.3742192603225432,
+   "win_pct": 69.36416184971098,
+   "win_05_pct": 17.91907514450867,
+   "best_sharpe": 1.19,
+   "n_stocks": 173
+  },
+  "MA_Cross_50_200": {
+   "avg_sharpe": 0.16543352601156067,
+   "med_sharpe": 0.13,
+   "std_sharpe": 0.368304131720621,
+   "win_pct": 68.78612716763006,
+   "win_05_pct": 16.76300578034682,
+   "best_sharpe": 1.43,
+   "n_stocks": 173
+  },
+  "Dual_Mom_6m": {
+   "avg_sharpe": 0.1638150289017341,
+   "med_sharpe": 0.17,
+   "std_sharpe": 0.3499849879598459,
+   "win_pct": 65.89595375722543,
+   "win_05_pct": 14.450867052023122,
+   "best_sharpe": 1.2,
+   "n_stocks": 173
+  },
+  "Vol_Breakout_3x": {
+   "avg_sharpe": 0.12265895953757225,
+   "med_sharpe": 0.18,
+   "std_sharpe": 0.34401049250207266,
+   "win_pct": 62.42774566473989,
+   "win_05_pct": 12.716763005780345,
+   "best_sharpe": 0.92,
+   "n_stocks": 173
+  },
+  "MA_Cross_20_50": {
+   "avg_sharpe": 0.1147398843930636,
+   "med_sharpe": 0.1,
+   "std_sharpe": 0.3326814624550913,
+   "win_pct": 65.89595375722543,
+   "win_05_pct": 10.982658959537572,
+   "best_sharpe": 1.24,
+   "n_stocks": 173
+  },
+  "Momentum_20d": {
+   "avg_sharpe": 0.10173410404624278,
+   "med_sharpe": 0.09,
+   "std_sharpe": 0.3343951469002504,
+   "win_pct": 59.53757225433526,
+   "win_05_pct": 12.716763005780345,
+   "best_sharpe": 1.11,
+   "n_stocks": 173
+  },
+  "RSI_25_75": {
+   "avg_sharpe": 0.0017919075144508698,
+   "med_sharpe": 0.05,
+   "std_sharpe": 0.406747599718435,
+   "win_pct": 52.601156069364166,
+   "win_05_pct": 8.670520231213873,
+   "best_sharpe": 0.98,
+   "n_stocks": 173
+  },
+  "Momentum_60d": {
+   "avg_sharpe": -0.009132947976878613,
+   "med_sharpe": 0.0,
+   "std_sharpe": 0.3416110246339029,
+   "win_pct": 49.71098265895954,
+   "win_05_pct": 7.514450867052023,
+   "best_sharpe": 0.97,
+   "n_stocks": 173
+  },
+  "BB_MeanRev_3std": {
+   "avg_sharpe": -0.015549132947976883,
+   "med_sharpe": -0.03,
+   "std_sharpe": 0.3497304728720641,
+   "win_pct": 46.24277456647399,
+   "win_05_pct": 8.092485549132949,
+   "best_sharpe": 0.85,
+   "n_stocks": 173
+  },
+  "Prev_Range_Rev": {
+   "avg_sharpe": -0.04069364161849712,
+   "med_sharpe": 0.0,
+   "std_sharpe": 0.3521061056169719,
+   "win_pct": 47.97687861271676,
+   "win_05_pct": 4.624277456647398,
+   "best_sharpe": 0.61,
+   "n_stocks": 173
+  },
+  "RSI_30_70": {
+   "avg_sharpe": -0.06751445086705203,
+   "med_sharpe": -0.04,
+   "std_sharpe": 0.3952099845298665,
+   "win_pct": 45.664739884393065,
+   "win_05_pct": 5.780346820809249,
+   "best_sharpe": 0.76,
+   "n_stocks": 173
+  },
+  "BB_MeanRev_2std": {
+   "avg_sharpe": -0.1023699421965318,
+   "med_sharpe": -0.09,
+   "std_sharpe": 0.39649569258825135,
+   "win_pct": 39.884393063583815,
+   "win_05_pct": 5.202312138728324,
+   "best_sharpe": 0.82,
+   "n_stocks": 173
+  },
+  "Day_Of_Week": {
+   "avg_sharpe": -0.20202312138728326,
+   "med_sharpe": -0.25,
+   "std_sharpe": 0.3012516462671968,
+   "win_pct": 27.74566473988439,
+   "win_05_pct": 0.5780346820809248,
+   "best_sharpe": 0.56,
+   "n_stocks": 173
+  }
+ },
+ "best_combos": [
+  [
+   "BSE",
+   "MA_Cross_50_200",
+   1.43
+  ],
+  [
+   "BSE",
+   "MA_Cross_20_50",
+   1.24
+  ],
+  [
+   "BSE",
+   "Dual_Mom_6m",
+   1.2
+  ],
+  [
+   "CGPOWER",
+   "Dual_Mom_6m",
+   1.2
+  ],
+  [
+   "ATGL",
+   "Vol_Breakout_2x",
+   1.19
+  ],
+  [
+   "GMRINFRA",
+   "Vol_Breakout_2x",
+   1.13
+  ],
+  [
+   "ADANIGREEN",
+   "Momentum_20d",
+   1.11
+  ],
+  [
+   "CGPOWER",
+   "MA_Cross_50_200",
+   1.09
+  ],
+  [
+   "ADANIGREEN",
+   "MA_Cross_50_200",
+   1.09
+  ],
+  [
+   "ADANIENSOL",
+   "Vol_Breakout_2x",
+   1.09
+  ],
+  [
+   "DIXON",
+   "Vol_Breakout_2x",
+   1.09
+  ],
+  [
+   "ATGL",
+   "Dual_Mom_6m",
+   1.08
+  ],
+  [
+   "IRFC",
+   "MA_Cross_50_200",
+   1.08
+  ],
+  [
+   "ADANIGREEN",
+   "Dual_Mom_6m",
+   1.07
+  ],
+  [
+   "CUMMINSIND",
+   "MA_Cross_50_200",
+   1.05
+  ],
+  [
+   "BIOCON",
+   "RSI_25_75",
+   0.98
+  ],
+  [
+   "ATGL",
+   "Momentum_60d",
+   0.97
+  ],
+  [
+   "NHPC",
+   "RSI_25_75",
+   0.97
+  ],
+  [
+   "ZYDUSLIFE",
+   "Dual_Mom_6m",
+   0.92
+  ],
+  [
+   "MAZDOCK",
+   "MA_Cross_50_200",
+   0.92
+  ],
+  [
+   "ATGL",
+   "Vol_Breakout_3x",
+   0.92
+  ],
+  [
+   "MAZDOCK",
+   "MA_Cross_20_50",
+   0.91
+  ],
+  [
+   "ADANIPOWER",
+   "Vol_Breakout_2x",
+   0.91
+  ],
+  [
+   "MAZDOCK",
+   "Vol_Breakout_3x",
+   0.91
+  ],
+  [
+   "MARICO",
+   "RSI_25_75",
+   0.91
+  ],
+  [
+   "UNIONBANK",
+   "Vol_Breakout_3x",
+   0.9
+  ],
+  [
+   "IRFC",
+   "Dual_Mom_6m",
+   0.88
+  ],
+  [
+   "DIXON",
+   "MA_Cross_20_50",
+   0.86
+  ],
+  [
+   "MAXHEALTH",
+   "MA_Cross_50_200",
+   0.86
+  ],
+  [
+   "UNIONBANK",
+   "Vol_Breakout_2x",
+   0.85
+  ],
+  [
+   "JIOFIN",
+   "Momentum_20d",
+   0.85
+  ],
+  [
+   "JIOFIN",
+   "BB_MeanRev_3std",
+   0.85
+  ],
+  [
+   "ADANIGREEN",
+   "Vol_Breakout_2x",
+   0.84
+  ],
+  [
+   "JBCHEPHARM",
+   "Vol_Breakout_2x",
+   0.84
+  ],
+  [
+   "MUTHOOTFIN",
+   "MA_Cross_50_200",
+   0.83
+  ],
+  [
+   "KALYANKJIL",
+   "MA_Cross_50_200",
+   0.83
+  ],
+  [
+   "DMART",
+   "Vol_Breakout_2x",
+   0.83
+  ],
+  [
+   "ICICIBANK",
+   "BB_MeanRev_2std",
+   0.82
+  ],
+  [
+   "ADANIENSOL",
+   "MA_Cross_50_200",
+   0.81
+  ],
+  [
+   "AUROPHARMA",
+   "Dual_Mom_6m",
+   0.81
+  ],
+  [
+   "TATAELXSI",
+   "MA_Cross_50_200",
+   0.8
+  ],
+  [
+   "SOLARINDS",
+   "MA_Cross_20_50",
+   0.8
+  ],
+  [
+   "BSE",
+   "Momentum_20d",
+   0.8
+  ],
+  [
+   "DIVISLAB",
+   "Vol_Breakout_2x",
+   0.8
+  ],
+  [
+   "ASIANPAINT",
+   "Vol_Breakout_2x",
+   0.8
+  ],
+  [
+   "ADANIENSOL",
+   "Momentum_20d",
+   0.79
+  ],
+  [
+   "ADANIENSOL",
+   "Vol_Breakout_3x",
+   0.79
+  ],
+  [
+   "HINDPETRO",
+   "RSI_25_75",
+   0.79
+  ],
+  [
+   "MAXHEALTH",
+   "RSI_25_75",
+   0.78
+  ],
+  [
+   "CGPOWER",
+   "Momentum_20d",
+   0.77
+  ]
+ ]
+}

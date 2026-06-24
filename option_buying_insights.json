@@ -1,0 +1,335 @@
+{
+  "NIFTY50": {
+    "big_move_days": {
+      "total_days": 2835,
+      "days_up_1pct": 172,
+      "pct_up_1pct": 6.07,
+      "days_down_1pct": 228,
+      "pct_down_1pct": 8.04,
+      "days_over_2pct": 59,
+      "days_over_3pct": 19
+    },
+    "gap_days": {
+      "gap_up_0.5pct": 440,
+      "gap_down_0.5pct": 233,
+      "gap_over_1pct": 181,
+      "gap_up_avg_move": 1.31,
+      "gap_down_avg_move": 1.68,
+      "no_gap_avg_move": 0.98
+    },
+    "expiry_patterns": {
+      "thu_days": 566,
+      "thu_avg_range": 1.07,
+      "thu_avg_ret": -0.04,
+      "thu_win_rate": 46.6,
+      "fri_days": 558,
+      "fri_avg_range": 1.12,
+      "fri_avg_ret": -0.01,
+      "fri_win_rate": 49.8
+    },
+    "squeeze_stats": {
+      "squeeze_bars": "31433",
+      "squeeze_pct": 14.8,
+      "next_bar_avg_range": 0.101,
+      "normal_avg_range": 0.114,
+      "expansion_ratio": 0.89
+    },
+    "sustained_moves": {
+      "buy_moves_30min_plus": 1315,
+      "buy_avg_bars": 6.7,
+      "buy_avg_return": 0.37,
+      "sell_moves_30min_plus": 1165,
+      "sell_avg_bars": 6.8,
+      "sell_avg_return": 0.42,
+      "pct_days_with_sustained_move": 87.5
+    },
+    "session_premium_value": {
+      "open_surge (9:15-9:30)": {
+        "n_5min_bars": 8468,
+        "avg_abs_range_pct": 0.223,
+        "avg_ret_pct": -0.014,
+        "movement_per_hour": 2.68,
+        "win_rate": 48.3,
+        "big_bar_freq_pct": 5.1
+      },
+      "morning (9:30-11:00)": {
+        "n_5min_bars": 50761,
+        "avg_abs_range_pct": 0.111,
+        "avg_ret_pct": -0.001,
+        "movement_per_hour": 1.33,
+        "win_rate": 50.2,
+        "big_bar_freq_pct": 0.5
+      },
+      "midday_lull (11:00-13:00)": {
+        "n_5min_bars": 67715,
+        "avg_abs_range_pct": 0.087,
+        "avg_ret_pct": -0.0,
+        "movement_per_hour": 1.04,
+        "win_rate": 50.5,
+        "big_bar_freq_pct": 0.4
+      },
+      "afternoon_recovery (13:00-14:30)": {
+        "n_5min_bars": 50789,
+        "avg_abs_range_pct": 0.102,
+        "avg_ret_pct": -0.0003,
+        "movement_per_hour": 1.22,
+        "win_rate": 50.9,
+        "big_bar_freq_pct": 0.4
+      },
+      "close_action (14:30-15:15)": {
+        "n_5min_bars": 25393,
+        "avg_abs_range_pct": 0.117,
+        "avg_ret_pct": -0.0018,
+        "movement_per_hour": 1.41,
+        "win_rate": 49.9,
+        "big_bar_freq_pct": 0.6
+      }
+    },
+    "monthly_expiry": {
+      "n_expiries": 174,
+      "avg_range": 1.1,
+      "avg_ret": 0.0,
+      "win_rate": 48.9,
+      "big_range_days_pct": 4.6
+    },
+    "regime_duration": {
+      "active": {
+        "avg_bars": 17.0,
+        "max_bars": "2365",
+        "n_occurrences": 4145
+      },
+      "normal": {
+        "avg_bars": 9.0,
+        "max_bars": "72",
+        "n_occurrences": 8414
+      },
+      "quiet": {
+        "avg_bars": 16.0,
+        "max_bars": "279",
+        "n_occurrences": 4302
+      }
+    }
+  },
+  "BANKNIFTY": {
+    "big_move_days": {
+      "total_days": 2835,
+      "days_up_1pct": 330,
+      "pct_up_1pct": 11.64,
+      "days_down_1pct": 362,
+      "pct_down_1pct": 12.77,
+      "days_over_2pct": 171,
+      "days_over_3pct": 47
+    },
+    "gap_days": {
+      "gap_up_0.5pct": 551,
+      "gap_down_0.5pct": 325,
+      "gap_over_1pct": 307,
+      "gap_up_avg_move": 1.9,
+      "gap_down_avg_move": 2.16,
+      "no_gap_avg_move": 1.3
+    },
+    "expiry_patterns": {
+      "thu_days": 566,
+      "thu_avg_range": 1.49,
+      "thu_avg_ret": -0.04,
+      "thu_win_rate": 47.7,
+      "fri_days": 558,
+      "fri_avg_range": 1.56,
+      "fri_avg_ret": 0.03,
+      "fri_win_rate": 50.5
+    },
+    "squeeze_stats": {
+      "squeeze_bars": "30440",
+      "squeeze_pct": 14.4,
+      "next_bar_avg_range": 0.149,
+      "normal_avg_range": 0.164,
+      "expansion_ratio": 0.91
+    },
+    "sustained_moves": {
+      "buy_moves_30min_plus": 1166,
+      "buy_avg_bars": 6.8,
+      "buy_avg_return": 0.55,
+      "sell_moves_30min_plus": 1114,
+      "sell_avg_bars": 6.8,
+      "sell_avg_return": 0.57,
+      "pct_days_with_sustained_move": 80.4
+    },
+    "session_premium_value": {
+      "open_surge (9:15-9:30)": {
+        "n_5min_bars": 8468,
+        "avg_abs_range_pct": 0.32,
+        "avg_ret_pct": -0.0142,
+        "movement_per_hour": 3.84,
+        "win_rate": 48.1,
+        "big_bar_freq_pct": 14.5
+      },
+      "morning (9:30-11:00)": {
+        "n_5min_bars": 50753,
+        "avg_abs_range_pct": 0.159,
+        "avg_ret_pct": -0.0004,
+        "movement_per_hour": 1.9,
+        "win_rate": 49.7,
+        "big_bar_freq_pct": 1.7
+      },
+      "midday_lull (11:00-13:00)": {
+        "n_5min_bars": 67712,
+        "avg_abs_range_pct": 0.129,
+        "avg_ret_pct": 0.0002,
+        "movement_per_hour": 1.54,
+        "win_rate": 50.0,
+        "big_bar_freq_pct": 1.1
+      },
+      "afternoon_recovery (13:00-14:30)": {
+        "n_5min_bars": 50788,
+        "avg_abs_range_pct": 0.149,
+        "avg_ret_pct": -0.0002,
+        "movement_per_hour": 1.79,
+        "win_rate": 50.5,
+        "big_bar_freq_pct": 1.6
+      },
+      "close_action (14:30-15:15)": {
+        "n_5min_bars": 25393,
+        "avg_abs_range_pct": 0.165,
+        "avg_ret_pct": -0.0015,
+        "movement_per_hour": 1.98,
+        "win_rate": 50.0,
+        "big_bar_freq_pct": 2.0
+      }
+    },
+    "monthly_expiry": {
+      "n_expiries": 174,
+      "avg_range": 1.57,
+      "avg_ret": 0.03,
+      "win_rate": 50.0,
+      "big_range_days_pct": 17.2
+    },
+    "regime_duration": {
+      "active": {
+        "avg_bars": 17.0,
+        "max_bars": "2452",
+        "n_occurrences": 4015
+      },
+      "normal": {
+        "avg_bars": 9.0,
+        "max_bars": "86",
+        "n_occurrences": 8288
+      },
+      "quiet": {
+        "avg_bars": 16.0,
+        "max_bars": "359",
+        "n_occurrences": 4296
+      }
+    }
+  },
+  "SENSEX": {
+    "big_move_days": {
+      "total_days": 2585,
+      "days_up_1pct": 150,
+      "pct_up_1pct": 5.8,
+      "days_down_1pct": 200,
+      "pct_down_1pct": 7.74,
+      "days_over_2pct": 57,
+      "days_over_3pct": 19
+    },
+    "gap_days": {
+      "gap_up_0.5pct": 384,
+      "gap_down_0.5pct": 191,
+      "gap_over_1pct": 153,
+      "gap_up_avg_move": 1.4,
+      "gap_down_avg_move": 1.69,
+      "no_gap_avg_move": 0.97
+    },
+    "expiry_patterns": {
+      "thu_days": 517,
+      "thu_avg_range": 1.08,
+      "thu_avg_ret": -0.06,
+      "thu_win_rate": 45.3,
+      "fri_days": 512,
+      "fri_avg_range": 1.14,
+      "fri_avg_ret": -0.01,
+      "fri_win_rate": 48.0
+    },
+    "squeeze_stats": {
+      "squeeze_bars": "30457",
+      "squeeze_pct": 15.8,
+      "next_bar_avg_range": 0.1,
+      "normal_avg_range": 0.112,
+      "expansion_ratio": 0.89
+    },
+    "sustained_moves": {
+      "buy_moves_30min_plus": 1217,
+      "buy_avg_bars": 6.8,
+      "buy_avg_return": 0.38,
+      "sell_moves_30min_plus": 1067,
+      "sell_avg_bars": 6.8,
+      "sell_avg_return": 0.4,
+      "pct_days_with_sustained_move": 88.4
+    },
+    "session_premium_value": {
+      "open_surge (9:15-9:30)": {
+        "n_5min_bars": 7727,
+        "avg_abs_range_pct": 0.233,
+        "avg_ret_pct": -0.0168,
+        "movement_per_hour": 2.8,
+        "win_rate": 49.0,
+        "big_bar_freq_pct": 6.6
+      },
+      "morning (9:30-11:00)": {
+        "n_5min_bars": 46325,
+        "avg_abs_range_pct": 0.109,
+        "avg_ret_pct": -0.0009,
+        "movement_per_hour": 1.31,
+        "win_rate": 50.2,
+        "big_bar_freq_pct": 0.5
+      },
+      "midday_lull (11:00-13:00)": {
+        "n_5min_bars": 61805,
+        "avg_abs_range_pct": 0.085,
+        "avg_ret_pct": 0.0,
+        "movement_per_hour": 1.02,
+        "win_rate": 50.3,
+        "big_bar_freq_pct": 0.4
+      },
+      "afternoon_recovery (13:00-14:30)": {
+        "n_5min_bars": 46341,
+        "avg_abs_range_pct": 0.098,
+        "avg_ret_pct": 0.0002,
+        "movement_per_hour": 1.18,
+        "win_rate": 51.1,
+        "big_bar_freq_pct": 0.5
+      },
+      "close_action (14:30-15:15)": {
+        "n_5min_bars": 23170,
+        "avg_abs_range_pct": 0.115,
+        "avg_ret_pct": -0.0021,
+        "movement_per_hour": 1.38,
+        "win_rate": 50.1,
+        "big_bar_freq_pct": 0.6
+      }
+    },
+    "monthly_expiry": {
+      "n_expiries": 159,
+      "avg_range": 1.13,
+      "avg_ret": 0.0,
+      "win_rate": 47.2,
+      "big_range_days_pct": 5.7
+    },
+    "regime_duration": {
+      "active": {
+        "avg_bars": 16.0,
+        "max_bars": "2362",
+        "n_occurrences": 3885
+      },
+      "normal": {
+        "avg_bars": 8.0,
+        "max_bars": "74",
+        "n_occurrences": 7905
+      },
+      "quiet": {
+        "avg_bars": 16.0,
+        "max_bars": "120",
+        "n_occurrences": 4060
+      }
+    }
+  }
+}

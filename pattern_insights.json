@@ -1,0 +1,465 @@
+{
+  "analysis_date": "2026-06-24 16:27:58.680914",
+  "daily_insights": {
+    "date_range": "2016-01-01 to 2026-06-24",
+    "stocks_analyzed": 395,
+    "trading_days": 2625,
+    "total_observations": 856439,
+    "gaps": {
+      "total_gap_days": 859677,
+      "gap_up_gt_0.5pct": 287017,
+      "gap_down_lt_-0.5pct": 114395,
+      "gap_up_fill_rate": 56.7,
+      "gap_down_fill_rate": 49.6,
+      "gap_up_continuation_rate": 31.2,
+      "gap_down_continuation_rate": 37.9,
+      "avg_return_gap_up": -0.43,
+      "avg_return_gap_down": 0.39,
+      "avg_return_no_gap": -0.11
+    },
+    "day_of_week": {
+      "Monday": {
+        "avg_ret": -0.063,
+        "std": 3.088,
+        "n": 170077
+      },
+      "Tuesday": {
+        "avg_ret": 0.145,
+        "std": 2.763,
+        "n": 171888
+      },
+      "Wednesday": {
+        "avg_ret": 0.186,
+        "std": 2.806,
+        "n": 172325
+      },
+      "Thursday": {
+        "avg_ret": 0.089,
+        "std": 2.439,
+        "n": 172004
+      },
+      "Friday": {
+        "avg_ret": 0.019,
+        "std": 2.635,
+        "n": 169750
+      }
+    },
+    "monthly": {
+      "Jan": {
+        "avg_ret": -0.002,
+        "n": 75829
+      },
+      "Feb": {
+        "avg_ret": -0.077,
+        "n": 70664
+      },
+      "Mar": {
+        "avg_ret": -0.138,
+        "n": 71509
+      },
+      "Apr": {
+        "avg_ret": 0.355,
+        "n": 68076
+      },
+      "May": {
+        "avg_ret": 0.066,
+        "n": 74878
+      },
+      "Jun": {
+        "avg_ret": 0.158,
+        "n": 73141
+      },
+      "Jul": {
+        "avg_ret": 0.149,
+        "n": 70443
+      },
+      "Aug": {
+        "avg_ret": 0.103,
+        "n": 66655
+      },
+      "Sep": {
+        "avg_ret": 0.039,
+        "n": 66674
+      },
+      "Oct": {
+        "avg_ret": 0.071,
+        "n": 71285
+      },
+      "Nov": {
+        "avg_ret": 0.09,
+        "n": 71342
+      },
+      "Dec": {
+        "avg_ret": 0.107,
+        "n": 75548
+      }
+    },
+    "volatility": {
+      "avg_daily_range_pct": Infinity,
+      "narrow_range_next_day_avg_ret": 0.057,
+      "wide_range_next_day_avg_ret": 0.479
+    },
+    "momentum": {
+      "after_big_up_day_avg_ret": 0.207,
+      "after_big_down_day_avg_ret": -0.019,
+      "after_extreme_2day_avg_ret": 0.107
+    },
+    "orb": {
+      "first_hour_avg_ret": -0.157,
+      "remaining_avg_ret": 0.234,
+      "first_hour_std": 2.406
+    },
+    "gap_buckets": {
+      "0.3-0.6pct": {
+        "gap_up_fill_rate": 58.1,
+        "n_up": 155664,
+        "gap_down_fill_rate": 47.8,
+        "n_down": 57607
+      },
+      "0.5-1.0pct": {
+        "gap_up_fill_rate": 58.8,
+        "n_up": 176975,
+        "gap_down_fill_rate": 50.1,
+        "n_down": 59141
+      },
+      "1.0-2.0pct": {
+        "gap_up_fill_rate": 59.2,
+        "n_up": 80914,
+        "gap_down_fill_rate": 51.7,
+        "n_down": 35732
+      },
+      "1.5-3.0pct": {
+        "gap_up_fill_rate": 58.1,
+        "n_up": 39028,
+        "gap_down_fill_rate": 51.4,
+        "n_down": 20905
+      },
+      "2.0-4.0pct": {
+        "gap_up_fill_rate": 57.1,
+        "n_up": 21813,
+        "gap_down_fill_rate": 49.4,
+        "n_down": 13367
+      }
+    },
+    "best_month": "Apr",
+    "worst_month": "Mar"
+  },
+  "intraday": {
+    "opening_30m_avg_ret": 0.0053,
+    "opening_30m_win_rate": 46.5,
+    "midday_avg_ret": -0.0002,
+    "closing_30m_avg_ret": -0.0008,
+    "closing_30m_win_rate": 44.4,
+    "most_profitable_times": [
+      {
+        "time": "09:15",
+        "avg_ret": 0.1858
+      },
+      {
+        "time": "15:09",
+        "avg_ret": 0.0336
+      },
+      {
+        "time": "15:21",
+        "avg_ret": 0.02
+      },
+      {
+        "time": "09:21",
+        "avg_ret": 0.0174
+      },
+      {
+        "time": "15:29",
+        "avg_ret": 0.0138
+      }
+    ],
+    "least_profitable_times": [
+      {
+        "time": "09:20",
+        "avg_ret": -0.0237
+      },
+      {
+        "time": "15:20",
+        "avg_ret": -0.02
+      },
+      {
+        "time": "09:25",
+        "avg_ret": -0.014
+      },
+      {
+        "time": "15:10",
+        "avg_ret": -0.0121
+      },
+      {
+        "time": "15:11",
+        "avg_ret": -0.0121
+      }
+    ],
+    "total_minute_obs": 14284535
+  },
+  "stock_performance": {
+    "best_sharpe": [
+      {
+        "sym": "HSCL",
+        "sharpe": 1.57,
+        "avg_daily_ret": 0.298
+      },
+      {
+        "sym": "MAZDOCK",
+        "sharpe": 1.47,
+        "avg_daily_ret": 0.293
+      },
+      {
+        "sym": "KEI",
+        "sharpe": 1.31,
+        "avg_daily_ret": 0.233
+      },
+      {
+        "sym": "POLYCAB",
+        "sharpe": 1.3,
+        "avg_daily_ret": 0.186
+      },
+      {
+        "sym": "SOLARINDS",
+        "sharpe": 1.23,
+        "avg_daily_ret": 0.156
+      },
+      {
+        "sym": "ADANIGREEN",
+        "sharpe": 1.16,
+        "avg_daily_ret": 0.252
+      },
+      {
+        "sym": "JSL",
+        "sharpe": 1.11,
+        "avg_daily_ret": 0.235
+      },
+      {
+        "sym": "ENRIN",
+        "sharpe": 1.1,
+        "avg_daily_ret": 0.158
+      },
+      {
+        "sym": "RADICO",
+        "sharpe": 1.08,
+        "avg_daily_ret": 0.175
+      },
+      {
+        "sym": "BDL",
+        "sharpe": 1.05,
+        "avg_daily_ret": 0.24
+      }
+    ],
+    "worst_sharpe": [
+      {
+        "sym": "SADBHAV",
+        "sharpe": -0.47,
+        "avg_daily_ret": -0.097
+      },
+      {
+        "sym": "INOXWIND",
+        "sharpe": -0.37,
+        "avg_daily_ret": -0.068
+      },
+      {
+        "sym": "STARHEALTH",
+        "sharpe": -0.26,
+        "avg_daily_ret": -0.032
+      },
+      {
+        "sym": "VAKRANGEE",
+        "sharpe": -0.23,
+        "avg_daily_ret": -0.053
+      },
+      {
+        "sym": "ALLCARGO",
+        "sharpe": -0.21,
+        "avg_daily_ret": -0.045
+      },
+      {
+        "sym": "ZEEL",
+        "sharpe": -0.16,
+        "avg_daily_ret": -0.035
+      },
+      {
+        "sym": "JAGRAN",
+        "sharpe": -0.15,
+        "avg_daily_ret": -0.023
+      },
+      {
+        "sym": "YESBANK",
+        "sharpe": -0.07,
+        "avg_daily_ret": -0.017
+      },
+      {
+        "sym": "INDOSTAR",
+        "sharpe": -0.06,
+        "avg_daily_ret": -0.012
+      },
+      {
+        "sym": "TVTODAY",
+        "sharpe": -0.06,
+        "avg_daily_ret": -0.009
+      }
+    ],
+    "median_daily_ret": -0.048,
+    "avg_daily_ret": 0.076
+  },
+  "volatility_ranking": {
+    "most_volatile": [
+      {
+        "sym": "EDELWEISS",
+        "avg_range": Infinity
+      },
+      {
+        "sym": "VAKRANGEE",
+        "avg_range": Infinity
+      },
+      {
+        "sym": "IDEA",
+        "avg_range": 5.79
+      },
+      {
+        "sym": "KIOCL",
+        "avg_range": 5.19
+      },
+      {
+        "sym": "RPOWER",
+        "avg_range": 5.11
+      },
+      {
+        "sym": "DCAL",
+        "avg_range": 5.05
+      },
+      {
+        "sym": "IFCI",
+        "avg_range": 4.99
+      },
+      {
+        "sym": "GMRINFRA",
+        "avg_range": 4.95
+      },
+      {
+        "sym": "JISLJALEQS",
+        "avg_range": 4.94
+      },
+      {
+        "sym": "ITDC",
+        "avg_range": 4.83
+      }
+    ],
+    "least_volatile": [
+      {
+        "sym": "DABUR",
+        "avg_range": 2.2
+      },
+      {
+        "sym": "BRITANNIA",
+        "avg_range": 2.21
+      },
+      {
+        "sym": "COLPAL",
+        "avg_range": 2.24
+      },
+      {
+        "sym": "MRF",
+        "avg_range": 2.25
+      },
+      {
+        "sym": "LICI",
+        "avg_range": 2.28
+      },
+      {
+        "sym": "GILLETTE",
+        "avg_range": 2.29
+      },
+      {
+        "sym": "SANOFI",
+        "avg_range": 2.3
+      },
+      {
+        "sym": "PIDILITIND",
+        "avg_range": 2.32
+      },
+      {
+        "sym": "TATACAP",
+        "avg_range": 2.34
+      },
+      {
+        "sym": "MARICO",
+        "avg_range": 2.36
+      }
+    ]
+  },
+  "streak_analysis": [
+    {
+      "n_consecutive_up": 1,
+      "avg_next_ret": 1.772,
+      "n": 212176
+    },
+    {
+      "n_consecutive_down": 1,
+      "avg_next_bounce_ret": -1.55,
+      "n": 212697
+    },
+    {
+      "n_consecutive_up": 2,
+      "avg_next_ret": 1.873,
+      "n": 102469
+    },
+    {
+      "n_consecutive_down": 2,
+      "avg_next_bounce_ret": -1.582,
+      "n": 109819
+    },
+    {
+      "n_consecutive_up": 3,
+      "avg_next_ret": 1.96,
+      "n": 49877
+    },
+    {
+      "n_consecutive_down": 3,
+      "avg_next_bounce_ret": -1.655,
+      "n": 55910
+    },
+    {
+      "n_consecutive_up": 4,
+      "avg_next_ret": 2.011,
+      "n": 24396
+    },
+    {
+      "n_consecutive_down": 4,
+      "avg_next_bounce_ret": -1.732,
+      "n": 28631
+    },
+    {
+      "n_consecutive_up": 5,
+      "avg_next_ret": 2.064,
+      "n": 11785
+    },
+    {
+      "n_consecutive_down": 5,
+      "avg_next_bounce_ret": -1.744,
+      "n": 14332
+    },
+    {
+      "n_consecutive_up": 6,
+      "avg_next_ret": 2.09,
+      "n": 5752
+    },
+    {
+      "n_consecutive_down": 6,
+      "avg_next_bounce_ret": -1.858,
+      "n": 7349
+    },
+    {
+      "n_consecutive_up": 7,
+      "avg_next_ret": 2.146,
+      "n": 2926
+    },
+    {
+      "n_consecutive_down": 7,
+      "avg_next_bounce_ret": -1.909,
+      "n": 3742
+    }
+  ]
+}

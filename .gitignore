@@ -1,0 +1,44 @@
+# Git ignore for NSE stock prediction project
+
+# Warehouse database (4GB+) — too large for git
+warehouse/
+
+# Data downloads
+nifty50_full_history/
+nifty50_verified_data/
+comprehensive_data/
+nifty50_list.csv
+
+# Generated PDF reports
+*.pdf
+!full_institutional_platform_v4.ipynb
+!full_institutional_platform_v5.ipynb
+!full_institutional_platform.ipynb
+!full_return_model_pipeline.ipynb
+!training_evaluation.ipynb
+
+# Cache / logs
+cache/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temp / test
+*.tmp
+*.temp
+test_*.pdf
+test_pdf_format.py
+check_*.py
+diagnose.py
+debug_lookup.py
+check_py.py
