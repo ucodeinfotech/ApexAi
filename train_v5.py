@@ -1,4 +1,5 @@
 """v5: Train with 141 stocks (90 original + 51 new heavyweights)"""
+import os; os.environ['OMP_NUM_THREADS']='20'; os.environ['MKL_NUM_THREADS']='20'
 import duckdb, pandas as pd, numpy as np, warnings, pickle, time, math
 import xgboost as xgb, lightgbm as lgb, catboost as cb
 from sklearn.preprocessing import StandardScaler
@@ -239,7 +240,7 @@ for wi, (ty, test_yr) in enumerate(windows):
         tr_sorted=train.sort_values('datetime').reset_index(drop=True)
         sp=int(len(tr_sorted)*0.8); tr,val=tr_sorted.iloc[:sp],tr_sorted.iloc[sp:]
         if len(val)<20: return -999
-        s=StandardScaler(); m=xgb.XGBRegressor(random_state=42,n_jobs=-1,verbosity=0,**p)
+        s=StandardScaler(); m=xgb.XGBRegressor(random_state=42,n_jobs=-1,verbosity=0,device='cuda',tree_method='hist',**p)
         m.fit(s.fit_transform(tr[valid2].values),tr[RET_COL].values)
         pr=m.predict(s.transform(val[valid2].values))
         return r2_score(val[RET_COL].values,pr) if not np.isnan(pr).any() else -999
@@ -252,7 +253,7 @@ for wi, (ty, test_yr) in enumerate(windows):
     # SHAP feature selection
     print(f'  SHAP...')
     ss=StandardScaler(); Xs=ss.fit_transform(train[valid2].values)
-    ms=xgb.XGBRegressor(n_estimators=100,max_depth=4,random_state=42,n_jobs=-1,verbosity=0)
+    ms=xgb.XGBRegressor(n_estimators=100,max_depth=4,random_state=42,n_jobs=-1,verbosity=0,device='cuda',tree_method='hist')
     ms.fit(Xs,train[RET_COL].values)
     try:
         si=get_shap_imp(ms,Xs[:min(2000,len(Xs))],valid2)
@@ -276,11 +277,11 @@ for wi, (ty, test_yr) in enumerate(windows):
     train['gid']=train.groupby('datetime').ngroup()
     y_rank=train['dr_cap'].values; grps=train.groupby('gid').size().values
 
-    m_xgb=xgb.XGBRegressor(random_state=42,n_jobs=-1,verbosity=0,**xgb_hp).fit(X_tr,y_tr)
-    m_rank=xgb.XGBRanker(n_estimators=120,max_depth=4,learning_rate=0.05,random_state=42,n_jobs=-1,verbosity=0,objective='rank:ndcg',ndcg_exp_gain=False).fit(X_tr,y_rank,group=grps)
+    m_xgb=xgb.XGBRegressor(random_state=42,n_jobs=-1,verbosity=0,device='cuda',tree_method='hist',**xgb_hp).fit(X_tr,y_tr)
+    m_rank=xgb.XGBRanker(n_estimators=120,max_depth=4,learning_rate=0.05,random_state=42,n_jobs=-1,verbosity=0,objective='rank:ndcg',ndcg_exp_gain=False,device='cuda',tree_method='hist').fit(X_tr,y_rank,group=grps)
     m_lgb=lgb.LGBMRegressor(n_estimators=best_hp['n'],max_depth=best_hp['d'],learning_rate=best_hp['lr'],subsample=best_hp['ss'],colsample_bytree=best_hp['cs'],reg_alpha=best_hp['al'],reg_lambda=best_hp['la'],random_state=42,n_jobs=-1,verbosity=-1).fit(X_tr,y_tr)
     m_lgb_r=lgb.LGBMRanker(n_estimators=100,max_depth=4,learning_rate=0.05,random_state=42,n_jobs=-1,verbosity=-1,max_position=30).fit(X_tr,y_rank,group=grps)
-    m_cb=cb.CatBoostRegressor(n_estimators=best_hp['n'],learning_rate=best_hp['lr'],random_seed=42,verbose=0,allow_writing_files=False).fit(X_tr,y_tr)
+    m_cb=cb.CatBoostRegressor(n_estimators=best_hp['n'],learning_rate=best_hp['lr'],random_seed=42,verbose=0,allow_writing_files=False,task_type='GPU').fit(X_tr,y_tr)
     m_rf=RandomForestRegressor(n_estimators=100,max_depth=6,random_state=42,n_jobs=-1).fit(X_tr,y_tr)
     m_et=ExtraTreesRegressor(n_estimators=100,max_depth=6,random_state=42,n_jobs=-1).fit(X_tr,y_tr)
 

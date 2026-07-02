@@ -1,0 +1,72 @@
+//@version=5
+strategy(title="Vol Breakout - Swing Momentum", shorttitle="Vol Breakout", overlay=true,
+     initial_capital=100000, default_qty_type=strategy.percent_of_equity, default_qty_value=5,
+     commission_type=strategy.commission.percent, commission_value=0.05, slippage=1)
+
+// === INPUTS ===
+lookback     = input.int(20, "Volume Lookback", minval=5, maxval=100)
+vol_mult     = input.float(2.0, "Volume Multiplier", minval=1.0, maxval=5.0, step=0.1)
+min_ret_pct  = input.float(1.0, "Min Return %", minval=0.5, maxval=5.0, step=0.25)
+hold_days    = input.int(5, "Hold Days", minval=2, maxval=20)
+show_signals = input.bool(true, "Show Signal Markers")
+use_short    = input.bool(false, "Enable Short Signals")
+
+// === CALCULATIONS ===
+avg_vol   = ta.sma(volume, lookback)
+ret_pct   = (close - close[1]) / close[1] * 100
+
+// === SIGNAL CONDITIONS ===
+long_signal = ret_pct > min_ret_pct and volume > avg_vol * vol_mult
+short_signal = use_short and ret_pct < -min_ret_pct and volume > avg_vol * vol_mult
+
+// === POSITION MANAGEMENT ===
+var int bars_since_entry = 0
+var int hold_bar = 0
+
+if (strategy.position_size == 0)
+    bars_since_entry := 0
+    hold_bar := 0
+
+if (long_signal or short_signal)
+    bars_since_entry := 0
+    if long_signal
+        strategy.entry("Long", strategy.long, comment="VolBreak")
+        hold_bar := bar_index
+    if short_signal
+        strategy.entry("Short", strategy.short, comment="VolBreakS")
+        hold_bar := bar_index
+
+if (strategy.position_size != 0)
+    bars_since_entry := bars_since_entry + 1
+
+// Exit after hold_days
+if (bars_since_entry >= hold_days)
+    strategy.close_all(comment="Exit D" + str.tostring(hold_days))
+    bars_since_entry := 0
+
+// === PLOTTING ===
+plotshape(show_signals and long_signal ? close : na, style=shape.triangleup,
+     location=location.belowbar, color=color.new(#00ff00, 0), size=size.small,
+     title="Long Signal")
+plotshape(show_signals and short_signal ? close : na, style=shape.triangledown,
+     location=location.abovebar, color=color.new(#ff0000, 0), size=size.small,
+     title="Short Signal")
+
+// Volume condition visualization
+plot(avg_vol * vol_mult, "Vol Threshold", color=color.new(#ff8800, 40), linewidth=1)
+plot(volume, "Volume", color=color.new(#3366ff, 30), style=plot.style_histogram)
+
+// === INFO PANEL ===
+var tbl = table.new(position.top_right, 2, 4, bgcolor=color.new(#111111, 80), border_width=0)
+if barstate.islast
+    tbl.cell(0, 0, "Vol Breakout", text_color=#00ff88, text_size=size.small, text_halign=text_halign.center)
+    tbl.cell(0, 1, "Win Rate:", text_color=#888888, text_size=size.small)
+    tbl.cell(1, 1, str.tostring(strategy.wintrades / strategy.totaltrades * 100, "#.#") + "%", text_color=#ffffff, text_size=size.small)
+    tbl.cell(0, 2, "Trades:", text_color=#888888, text_size=size.small)
+    tbl.cell(1, 2, str.tostring(strategy.totaltrades), text_color=#ffffff, text_size=size.small)
+    tbl.cell(0, 3, "Params:", text_color=#888888, text_size=size.small)
+    tbl.cell(1, 3, str.tostring(lookback) + "/" + str.tostring(vol_mult), text_color=#ffffff, text_size=size.small)
+
+// === ALERTS ===
+alertcondition(long_signal, title="Long Signal", message="Vol Breakout BUY {{ticker}} at {{close}}")
+alertcondition(short_signal, title="Short Signal", message="Vol Breakout SELL {{ticker}} at {{close}}")

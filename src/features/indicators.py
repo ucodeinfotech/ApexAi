@@ -320,8 +320,8 @@ def add_pivot_points(df):
 
 def add_swing_detection(df, window=5):
     high, low = df["high"], df["low"]
-    df["swing_high"] = high == high.rolling(window * 2 + 1, center=True).max()
-    df["swing_low"] = low == low.rolling(window * 2 + 1, center=True).min()
+    df["swing_high"] = high == high.rolling(window * 2 + 1, center=False).max()
+    df["swing_low"] = low == low.rolling(window * 2 + 1, center=False).min()
     return df
 
 

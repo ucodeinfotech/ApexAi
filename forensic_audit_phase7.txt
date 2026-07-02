@@ -1,0 +1,155 @@
+================================================================================
+PHASE 7: STATISTICAL VALIDATION
+Independent re-verification of v5 trading system
+================================================================================
+
+Loading results_v5.pkl...
+Backtest rows (bt): 2095
+Prediction rows (rd): 309,233
+Unique dates: 2095
+Unique symbols: 141
+
+Pre-computing indices...
+Original Top-1 CAGR (stack): 1793.9630%
+Original Top-1 CAGR (avg):   1851.1785%
+Original Top-1 Sharpe:       9.0235
+
+------------------------------------------------------------
+1. LABEL SHUFFLE TEST
+   Shuffle act_open 1000x, compute Top-1 CAGR each time
+------------------------------------------------------------
+   Label shuffle 200/1000
+   Label shuffle 400/1000
+   Label shuffle 600/1000
+   Label shuffle 800/1000
+   Label shuffle 1000/1000
+   Original CAGR:           +1793.9630%
+   Shuffled CAGR mean:      -24.9266%
+   Shuffled CAGR std:       8.5855%
+   Fraction beat original:  0.0000 (0.00%)
+   RESULT: PASS (p<0.05, signal is real)
+
+------------------------------------------------------------
+2. FEATURE SHUFFLE TEST
+   Shuffle each model's predictions independently 1000x
+------------------------------------------------------------
+   Feature shuffle 200/1000
+   Feature shuffle 400/1000
+   Feature shuffle 600/1000
+   Feature shuffle 800/1000
+   Feature shuffle 1000/1000
+   Original CAGR:           +1793.9630%
+   Shuffled CAGR mean:      -24.6984%
+   Shuffled CAGR std:       7.9620%
+   Fraction beat original:  0.0000 (0.00%)
+   RESULT: PASS (model predictions have real signal)
+
+------------------------------------------------------------
+3. MONTE CARLO SIMULATION
+   Generate 5000 synthetic return series from empirical daily returns
+------------------------------------------------------------
+   Daily return series length: 2095
+   Daily return mean: -0.0936%
+   Daily return std:  0.8891%
+   MC simulation 1000/5000
+   MC simulation 2000/5000
+   MC simulation 3000/5000
+   MC simulation 4000/5000
+   MC simulation 5000/5000
+   CAGR 95% CI: [-29.2102%, -13.6453%]
+   Sharpe 95% CI: [-2.3539, -0.9712]
+   Observed Top-1 CAGR: +1793.9630%
+   Observed Top-1 Sharpe: 9.0235
+   RESULT: Observed CAGR OUTSIDE 95% CI (significant)
+
+------------------------------------------------------------
+4. WHITE'S REALITY CHECK (re-implemented from scratch)
+   Block bootstrap, block_size=21, B=5000
+------------------------------------------------------------
+   Strategies: 14 (5 portfolio + 9 model)
+   Best strategy: t3_net (t=21.7040)
+   WRC bootstrap 1000/5000
+   WRC bootstrap 2000/5000
+   WRC bootstrap 3000/5000
+   WRC bootstrap 4000/5000
+   WRC bootstrap 5000/5000
+   White's RC p-value: 0.6060
+   RESULT: FAIL (p>=0.05)
+
+------------------------------------------------------------
+5. DEFLATED SHARPE RATIO (re-implemented from scratch)
+------------------------------------------------------------
+   M = 14 strategies, T = 2095 observations
+   Strategy               Sharpe        Num        Den      DSR
+   --------------------------------------------------------
+   t1_net                 6.8375   310.5866     4.9371   1.0000
+   t3_net                 7.5274   342.1602     5.4158   1.0000
+   t5_net                 6.0971   276.7094     4.4258   1.0000
+   t10_net                1.4296    63.1225     1.4219   1.0000
+   t3m_net                7.4602   339.0817     5.3691   1.0000
+   xgb_net                3.2593   146.8477     2.5123   1.0000
+   ranker_net             6.5333   296.6659     4.7267   1.0000
+   lgb_net                6.1948   281.1792     4.4931   1.0000
+   lgb_r_net              5.4323   246.2843     3.9692   1.0000
+   cb_net                 6.8272   310.1156     4.9300   1.0000
+   rf_net                 6.2760   284.8957     4.5491   1.0000
+   et_net                 6.7671   307.3646     4.8884   1.0000
+   avg_net                6.7401   306.1306     4.8697   1.0000
+   stack_net              6.8229   309.9213     4.9271   1.0000
+
+   Highest Sharpe: t3_net (7.5274)
+   Highest DSR:    1.0000
+
+------------------------------------------------------------
+6. DECILE ANALYSIS VERIFICATION
+   Rank predictions (stack) each day, split into 10 deciles
+------------------------------------------------------------
+   Decile       Mean Ret        Std    Count
+   --------------------------------------
+          0    +60.4611%  212.2620%    31783
+          1    +23.3116%  218.9009%    30924
+          2     +7.5873%  217.2564%    30573
+          3     -0.9646%  213.0728%    30831
+          4     -2.9024%  211.3323%    31046
+          5    -11.2531%  204.7612%    30365
+          6    -18.6772%  209.3320%    30603
+          7    -28.5011%  202.9688%    30801
+          8    -40.5602%  204.6153%    30696
+          9    -81.9606%  190.1629%    31611
+
+   Spearman r: -1.0000 (p=0.000000)
+   RESULT: Strong monotonicity
+
+------------------------------------------------------------
+7. SIGNAL SHUFFLE TEST
+   Shuffle avg prediction column 1000x, compute Top-1 Sharpe
+------------------------------------------------------------
+   Signal shuffle 200/1000
+   Signal shuffle 400/1000
+   Signal shuffle 600/1000
+   Signal shuffle 800/1000
+   Signal shuffle 1000/1000
+   Original Top-1 Sharpe:         9.0235
+   Shuffled Sharpe mean:          -0.7276
+   Shuffled Sharpe std:           0.3211
+   Max shuffled Sharpe:           0.2776
+   Fraction beat original:        0.0000 (0.00%)
+   RESULT: PASS (random avg rarely beats original)
+
+============================================================
+PHASE 7 SUMMARY
+============================================================
+
+  Test                             Result
+  ----------------------------------------  --------------------
+  1. Label Shuffle Test           PASS  (p=0.0000)
+  2. Feature Shuffle Test         PASS  (p=0.0000)
+  3. Monte Carlo Simulation       SIGNIFICANT  (CAGR 95% CI)
+  4. White's Reality Check        FAIL  (p=0.6060)
+  5. Deflated Sharpe Ratio        PASS  (max DSR=1.0000)
+  6. Decile Analysis              PASS  (Spearman r=-1.0000)
+  7. Signal Shuffle Test          PASS  (p=0.0000)
+
+================================================================================
+PHASE 7 COMPLETE
+================================================================================

@@ -61,7 +61,7 @@ def detect_market_regimes(timeframes=["1day"]):
 
         # Volatility regime: rolling 20-day vol, top 30% = high vol
         daily["vol_20d"] = daily["returns"].rolling(20).std()
-        vol_threshold = daily["vol_20d"].quantile(0.7)
+        vol_threshold = daily["vol_20d"].expanding().quantile(0.7)
         daily["high_vol"] = daily["vol_20d"] >= vol_threshold
 
         regime_map = {"bull": 1, "bear": -1, "sideways": 0}

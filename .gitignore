@@ -9,17 +9,74 @@ nifty50_verified_data/
 comprehensive_data/
 nifty50_list.csv
 
+# Warehouse database (4GB+) — too large for git
+warehouse/
+
+# Data downloads
+nifty50_full_history/
+nifty50_verified_data/
+comprehensive_data/
+nifty50_list.csv
+
+# Large parquet / pkl / duckdb
+*.parquet
+*.duckdb
+*.pkl
+training_data.pkl
+predictions.csv
+predictions_v5.csv
+predictions_v7.csv
+gap_fade_trade_log.csv
+
 # Generated PDF reports
 *.pdf
-!full_institutional_platform_v4.ipynb
-!full_institutional_platform_v5.ipynb
-!full_institutional_platform.ipynb
-!full_return_model_pipeline.ipynb
-!training_evaluation.ipynb
+!work_report_jun19_jul1.pdf
 
-# Cache / logs
+# Generated data directories
+backtest_results/
+reports/
 cache/
 logs/
+champion_model/
+dl_1min/
+directional_model_v2/
+final_eval/
+final_model/
+feature_selection_results/
+improvement_results/
+data_cleaning_results/
+data_mining_results/
+deep_analysis_report/
+eda_results/
+high_gainer_classifier/
+mtf_model_v2/
+phase10_14_tuning/
+phase6_deep_cleaning/
+phase9_split/
+report_mtf_60min/
+report_mtf_daily/
+report_resampled/
+return_prediction_report*/
+single_stock_return/
+transformer_stock/
+ts_analysis_output/
+vol_charts/
+
+# Exclude big generated files
+OpenAPIScripMaster.json
+catboost_info/
+cleaned_features.parquet
+engineered_features.parquet
+improved_features.parquet
+options_bhav.pkl
+stocks.duckdb
+market_data.duckdb
+vol_breakout_trades_corrected.csv
+vol_breakout_portfolio_trades.csv
+vol_breakout_scan.csv
+top10_daily_gainers.csv
+strategy_weekly_top5.csv
+strategy_weekly_factor.csv
 
 # Python
 __pycache__/
@@ -38,7 +95,6 @@ env/
 *.temp
 test_*.pdf
 test_pdf_format.py
-check_*.py
 diagnose.py
 debug_lookup.py
 check_py.py

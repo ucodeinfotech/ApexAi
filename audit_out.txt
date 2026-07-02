@@ -1,0 +1,9 @@
+Starting audit...
+Connected
+Total rows: 437,169,581
+  15min: 24,346,572 rows, 449 syms
+  1day: 981,013 rows, 449 syms
+  1min: 341,866,631 rows, 475 syms
+  5min: 63,897,849 rows, 401 syms
+  60min: 6,077,516 rows, 401 syms
+Done
