@@ -90,6 +90,12 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
+# Runtime tick data
+ai-pattern-screener/ticks.jsonl
+
+# Angel One daily cache (per-stock JSON files)
+ai-pattern-screener/daily_cache/
+
 # Temp / test
 *.tmp
 *.temp
@@ -98,3 +104,6 @@ test_pdf_format.py
 diagnose.py
 debug_lookup.py
 check_py.py
+
+# Dhan security master CSV (large, auto-downloaded)
+security_id_list.csv
