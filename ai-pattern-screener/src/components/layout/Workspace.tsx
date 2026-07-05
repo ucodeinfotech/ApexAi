@@ -10,6 +10,7 @@ import PatternComparison from "@/components/insights/PatternComparison";
 import BreadthCards from "@/components/market/BreadthCards";
 import PatternBuilder from "@/components/patterns/PatternBuilder";
 import DemaAtrPanel from "@/components/scanner/DemaAtrPanel";
+import ConsolidationBreakoutPanel from "@/components/scanner/ConsolidationBreakoutPanel";
 import { useStore } from "@/store/useStore";
 import { useState, useEffect } from "react";
 
@@ -21,7 +22,8 @@ const defaultLayouts = {
     { i: "insights", x: 6, y: 0, w: 3, h: 7, minW: 3, minH: 4 },
     { i: "breadth", x: 9, y: 0, w: 3, h: 7, minW: 3, minH: 6 },
     { i: "scanner", x: 0, y: 7, w: 7, h: 7, minW: 4, minH: 4 },
-    { i: "dema-atr", x: 7, y: 7, w: 5, h: 7, minW: 3, minH: 4 },
+    { i: "dema-atr", x: 7, y: 7, w: 3, h: 7, minW: 3, minH: 4 },
+    { i: "consolidation-breakout", x: 10, y: 7, w: 2, h: 7, minW: 2, minH: 4 },
     { i: "comparison", x: 0, y: 14, w: 12, h: 7, minW: 3, minH: 4 },
     { i: "builder", x: 0, y: 14, w: 12, h: 8, minW: 6, minH: 6 },
   ],
@@ -30,8 +32,9 @@ const defaultLayouts = {
     { i: "insights", x: 6, y: 0, w: 6, h: 5, minW: 3, minH: 4 },
     { i: "breadth", x: 0, y: 7, w: 12, h: 5, minW: 3, minH: 6 },
     { i: "scanner", x: 0, y: 12, w: 12, h: 7, minW: 4, minH: 4 },
-    { i: "dema-atr", x: 0, y: 19, w: 12, h: 7, minW: 3, minH: 4 },
-    { i: "comparison", x: 0, y: 26, w: 12, h: 5, minW: 3, minH: 4 },
+    { i: "dema-atr", x: 0, y: 19, w: 12, h: 5, minW: 3, minH: 4 },
+    { i: "consolidation-breakout", x: 0, y: 24, w: 12, h: 5, minW: 2, minH: 4 },
+    { i: "comparison", x: 0, y: 29, w: 12, h: 5, minW: 3, minH: 4 },
     { i: "builder", x: 0, y: 24, w: 12, h: 8, minW: 6, minH: 6 },
   ],
 };
@@ -41,6 +44,7 @@ const panelComponents: Record<string, React.ReactNode> = {
   insights: <AIInsights />,
   scanner: <ScannerTable />,
   "dema-atr": <DemaAtrPanel />,
+  "consolidation-breakout": <ConsolidationBreakoutPanel />,
   comparison: <PatternComparison />,
   breadth: <BreadthCards />,
   builder: <PatternBuilder />,
@@ -51,6 +55,7 @@ const panelTitles: Record<string, string> = {
   insights: "AI Insights",
   scanner: "Scanner",
   "dema-atr": "DEMA ATR",
+  "consolidation-breakout": "Consol / Breakout",
   comparison: "Pattern Comparison",
   breadth: "Market Breadth",
   builder: "Pattern Builder",
@@ -72,7 +77,8 @@ export default function Workspace() {
         <div className="col-span-3 row-span-1"><AIInsights /></div>
         <div className="col-span-3 row-span-1"><BreadthCards /></div>
         <div className="col-span-7 row-span-1"><ScannerTable /></div>
-        <div className="col-span-5 row-span-1"><DemaAtrPanel /></div>
+        <div className="col-span-3 row-span-1"><DemaAtrPanel /></div>
+        <div className="col-span-2 row-span-1"><ConsolidationBreakoutPanel /></div>
       </div>
     );
   }

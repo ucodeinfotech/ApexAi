@@ -216,64 +216,82 @@ export async function GET(
     } catch {}
   }
 
-  // ─── Fetch today's candle if cache doesn't have it ───
+  // ─── If cache missing today's candle, fetch via historical API before responding ───
   if (candles.length > 0) {
     const todayStart = Math.floor(new Date().setHours(0,0,0,0) / 1000);
     const lastCandleTime = candles[candles.length - 1].time;
-    if (lastCandleTime < todayStart) {
-      let todayCandle: any = null;
-      // Try 1: historical API
+    const hasToday = lastCandleTime >= todayStart;
+
+    // If cache doesn't have today yet, fetch it synchronously
+    if (!hasToday) {
       try {
-        const { stdout } = await execAsync(`python "${CACHE_SCRIPT}" today ${sym}`, { timeout: 15000 });
+        const { stdout } = await new Promise<any>((resolve, reject) => {
+          const cp = spawn("python", [CACHE_SCRIPT, "today", sym], { windowsHide: true, timeout: 15000 });
+          let out = "", err = "";
+          cp.stdout.on("data", (d: Buffer) => { out += d.toString(); });
+          cp.stderr.on("data", (d: Buffer) => { err += d.toString(); });
+          cp.on("close", (code) => code === 0 ? resolve({ stdout: out }) : reject(new Error(err)));
+          cp.on("error", reject);
+        });
         const todayData = JSON.parse(stdout);
         if (todayData.candles && todayData.candles.length > 0) {
           const c = todayData.candles[todayData.candles.length - 1];
-          if (c.time > lastCandleTime) todayCandle = c;
+          if (c.time > lastCandleTime) {
+            candles.push({
+              time: c.time, open: c.open, high: c.high, low: c.low,
+              close: c.close, volume: c.volume || 0,
+              body: Math.abs(c.close - c.open), range: Math.max(c.high - c.low, 1),
+            });
+            // Save to cache
+            try {
+              const cached = JSON.parse(fs.readFileSync(cachePath, "utf-8"));
+              cached.candles.push(c);
+              cached.count = cached.candles.length;
+              cached.cached_at = new Date().toISOString();
+              fs.writeFileSync(cachePath, JSON.stringify(cached, null, 2));
+            } catch {}
+          }
         }
       } catch {}
-      // Try 2: WebSocket live data (fallback for intraday)
-      if (!todayCandle) {
+    }
+
+    // Spawn WebSocket live fetch in background (non-blocking, ~2-9s)
+    // Updates cache so next request gets fresh data
+    try {
+      const cp = spawn("python", [CACHE_SCRIPT, "live", sym], {
+        stdio: ["ignore", "pipe", "pipe"], detached: true, windowsHide: true,
+      });
+      cp.unref();
+      let stdout = "";
+      cp.stdout.on("data", (chunk: Buffer) => { stdout += chunk.toString(); });
+      const timer = setTimeout(() => { cp.kill(); }, 8000);
+      cp.on("close", () => {
+        clearTimeout(timer);
         try {
-          const { stdout } = await execAsync(`python "${CACHE_SCRIPT}" live ${sym}`, { timeout: 15000 });
           const liveData = JSON.parse(stdout);
           if (liveData.quote) {
             const q = liveData.quote;
-            todayCandle = {
-              time: todayStart,
-              date: new Date().toISOString().split("T")[0],
-              open: q.open, high: q.high, low: q.low,
-              close: q.ltp, volume: q.volume,
+            const liveCandle = {
+              time: todayStart, date: new Date().toISOString().split("T")[0],
+              open: q.open, high: q.high, low: q.low, close: q.ltp, volume: q.volume,
             };
-          }
-        } catch {}
-      }
-      if (todayCandle) {
-        candles.push({
-          time: todayCandle.time, open: todayCandle.open, high: todayCandle.high,
-          low: todayCandle.low, close: todayCandle.close, volume: todayCandle.volume || 0,
-          body: Math.abs(todayCandle.close - todayCandle.open),
-          range: Math.max(todayCandle.high - todayCandle.low, 1),
-        });
-        // Update cache
-        try {
-          const cached = JSON.parse(fs.readFileSync(cachePath, "utf-8"));
-          // Avoid duplicate if same time already exists
-          const dup = cached.candles.find((c: any) => c.time === todayCandle.time);
-          if (!dup) {
-            cached.candles.push(todayCandle);
+            const cached = JSON.parse(fs.readFileSync(cachePath, "utf-8"));
+            const existing = cached.candles.find((c: any) => c.time === todayStart);
+            if (existing) Object.assign(existing, liveCandle);
+            else cached.candles.push(liveCandle);
             cached.count = cached.candles.length;
+            cached.cached_at = new Date().toISOString();
+            fs.writeFileSync(cachePath, JSON.stringify(cached, null, 2));
           }
-          cached.cached_at = new Date().toISOString();
-          fs.writeFileSync(cachePath, JSON.stringify(cached, null, 2));
         } catch {}
-      }
-    }
+      });
+    } catch {}
   }
 
   // Spawn background caching if no valid cache
   if (!cacheValid && fs.existsSync(path.join(DATA_DIR, `${sym}_ONE_DAY.csv`))) {
     const cp = spawn("python", [CACHE_SCRIPT, "fetch", sym], {
-      stdio: "ignore", detached: true,
+      stdio: "ignore", detached: true, windowsHide: true,
     });
     cp.unref();
   }

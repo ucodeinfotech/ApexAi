@@ -24,7 +24,8 @@ export default function MockChart() {
         if (!res.ok) throw new Error("Not found");
         const data = await res.json();
         const sorted = (data.candles || []).sort((a: any, b: any) => a.time - b.time);
-          setCandleData(sorted);
+          const chartData = sorted.map((c: any) => ({ ...c, time: new Date(c.time * 1000).toISOString().split("T")[0] }));
+          setCandleData(chartData);
           setDemaAtr(data.demaAtr?.slice() || []);
           if (sorted.length > 0) {
           const last = sorted[sorted.length - 1];

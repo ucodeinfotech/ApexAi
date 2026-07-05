@@ -31,6 +31,7 @@ gap_fade_trade_log.csv
 # Generated PDF reports
 *.pdf
 !work_report_jun19_jul1.pdf
+!master_backtest_report.pdf
 
 # Generated data directories
 backtest_results/

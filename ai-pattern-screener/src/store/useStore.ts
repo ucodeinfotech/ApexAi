@@ -184,8 +184,8 @@ export const useStore = create<AppState>((set, get) => ({
     setTimeout(() => set({ toast: { message: "", visible: false } }), 2200);
   },
 
-  panelOrder: ["chart", "insights", "scanner", "dema-atr", "breadth", "comparison", "builder"],
-  panelVisibility: { chart: true, insights: true, scanner: true, "dema-atr": true, breadth: true, comparison: true, builder: false },
+  panelOrder: ["chart", "insights", "scanner", "dema-atr", "consolidation-breakout", "breadth", "comparison", "builder"],
+  panelVisibility: { chart: true, insights: true, scanner: true, "dema-atr": true, "consolidation-breakout": true, breadth: true, comparison: true, builder: false },
 
   toggleSidebar: () => set((s) => ({ sidebarCollapsed: !s.sidebarCollapsed })),
   setSelectedStock: (s) => set({ selectedStock: s }),

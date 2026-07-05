@@ -25,7 +25,8 @@ export default function CandlestickChart() {
         if (!res.ok) throw new Error("Not found");
         const data = await res.json();
         const sorted = (data.candles || []).sort((a: any, b: any) => a.time - b.time);
-        setCandleData(sorted);
+        const chartData = sorted.map((c: any) => ({ ...c, time: new Date(c.time * 1000).toISOString().split("T")[0] }));
+        setCandleData(chartData);
         setAllPatterns(data.patterns || []);
         setDemaAtr(data.demaAtr?.slice() || []);
       } catch {
@@ -116,13 +117,15 @@ export default function CandlestickChart() {
     recentPatterns.forEach((p: any) => {
       const isFocus = focusPattern && p.triggerTime === focusPattern.triggerTime;
       const isBullish = p.triggerType === "BULLISH";
-      const tIdx = candleData.findIndex((d: any) => d.time === p.triggerTime);
-      const eIdx = p.consolEndTime ? candleData.findIndex((d: any) => d.time === p.consolEndTime) : -1;
+      const tDate = new Date(p.triggerTime * 1000).toISOString().split("T")[0];
+      const eDate = p.consolEndTime ? new Date(p.consolEndTime * 1000).toISOString().split("T")[0] : null;
+      const tIdx = candleData.findIndex((d: any) => d.time === tDate);
+      const eIdx = eDate ? candleData.findIndex((d: any) => d.time === eDate) : -1;
 
       // Trigger marker
       if (isFocus) {
         allChartMarkers.push({
-          time: p.triggerTime,
+          time: tDate,
           position: isBullish ? "belowBar" as const : "aboveBar" as const,
           color: isBullish ? "#22C55E" : "#EF4444",
           shape: isBullish ? "arrowUp" as const : "arrowDown" as const,
@@ -131,7 +134,7 @@ export default function CandlestickChart() {
         });
       } else {
         allChartMarkers.push({
-          time: p.triggerTime,
+          time: tDate,
           position: isBullish ? "belowBar" as const : "aboveBar" as const,
           color: isBullish ? "rgba(34,197,94,0.5)" : "rgba(239,68,68,0.5)",
           shape: isBullish ? "arrowUp" as const : "arrowDown" as const,
@@ -207,7 +210,7 @@ export default function CandlestickChart() {
       }
     });
 
-    allChartMarkers.sort((a: any, b: any) => a.time - b.time);
+    allChartMarkers.sort((a: any, b: any) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
     candleSeries.setMarkers(allChartMarkers.slice(0, 300));
 
     if (focusPattern) {
