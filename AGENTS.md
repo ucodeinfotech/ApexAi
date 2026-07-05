@@ -1,14 +1,15 @@
 # Project: Gap-Cross + 5min Confirmation Strategy (prev: AI Pattern Screener)
 
-**Goal**: Predict/trade next-day >2% gainers and intraday direction for Indian stocks. Key finding: **naive gap-cross fails, but 5min intraday confirmation transforms it to Sharpe 4.28+**.
+**Goal**: Predict which stocks become day's top gainers using first 15 minutes of intraday data (LightGBM walk-forward), or trade gap-cross with 5min confirmation.
 
-**Status**: Gap-cross backtest complete (107K+ trades, 475 stocks, 10 years). **Breakthrough**: 5min candle confirmation is the entire edge (Sharpe 0.92 → 4.28). **Data issue**: `cleaned_features.parquet` has critical data gaps — **Dhan cache (209 stocks, 56K rows) is verified clean** and used for `top40_gainers_verified.csv/pdf`.
+**Status**: **Data leakage found and fixed** — 4 `vol_pct` features leaked total day volume (future data). Clean model: Sharpe 11.6, AUC 0.842, 81% WR (previously inflated to 17.5/0.942). Gap-cross backtest complete (107K+ trades, 475 stocks, 10 years). **Breakthrough**: 5min candle confirmation is the entire edge (Sharpe 0.92 → 4.28). **Data issue**: `cleaned_features.parquet` has critical data gaps — **Dhan cache (209 stocks, 56K rows) is verified clean** and used for `top40_gainers_verified.csv/pdf`.
 
 ## Key Results
 - **Naive gap-cross**: 40.9% WR, -0.92 Sharpe — loses money
 - **5min confirmation**: **57.1% WR, Sharpe 4.28, +0.79% avg** with limit-at-prev_high entry. Triple confirmation best at 59.9%/Sharpe 4.93
 - **ML Direction (close>open)**: AUC=0.708, 82.6% WR at 0.80 threshold (saved: `direction_model.txt`)
 - **ML Big Day (>2%)**: AUC=0.809, 72.3% WR at 0.80 threshold (saved: `big_day_model.txt`)
+- **Top-20 @ 15min (CLEAN)**: **Sharpe 11.59, AUC 0.842, 81% WR, +0.92% avg daily** — no leakage, walk-forward 2024-2026 (saved: `_gainer_clean_model.txt`)
 - **Top 40 gainers (verified)**: 1,600 rows, 209 stocks, 40 trading days (May 6→Jul 2) — Dhan cache, no gaps
 
 ## Repository Layout
@@ -20,6 +21,32 @@
 - `top40_gainers_verified.csv/pdf` — Verified top-40 gainers (Dhan cache, no gaps)
 - `direction_model.txt` / `big_day_model.txt` — LightGBM models
 - `gap_cross_strategy_logic.md` — Complete deployment spec
+
+## Session 11 (Jul 5 2026) — Data Leakage Found & Fixed: Clean Model
+
+### Finding
+**4 features leaked future data**: `5min_vol_pct`, `15min_vol_pct`, `30min_vol_pct`, `60min_vol_pct` all divide checkpoint volume by **total day volume** (only known at 3:30 PM). Classic look-ahead bias.
+
+`fc_vol_pct` features (first-candle vol / checkpoint vol) are **safe** — both known at checkpoint time. All other features (cum_ret, cum_high/low, price_pos, candle shapes, gap interactions) are genuine.
+
+### Clean Model Performance (no leakage)
+| Metric | Leaky (old) | Clean (new) | Change |
+|---|---|---|---|
+| Walk-forward AUC | 0.942 | **0.842** | -10.6% |
+| Walk-forward Sharpe | 17.4 | **11.59** | -33% |
+| Win rate | 89% | **81%** | -8pp |
+| Daily avg return | +1.58% | **+0.92%** | -42% |
+| Max drawdown | -5.8% | **-3.8%** | Better |
+| Trades (2026) | 2,335 | **2,335** | Same |
+
+### Changes Made
+1. **Removed 4 leaky columns** from `_full_feature_matrix_all.parquet` — saved memory (52 cols vs 56)
+2. **Retrained walk-forward models**: `_gainer_clean_2024/2025/2026.txt` + master `_gainer_clean_model.txt`
+3. **Generated clean trade book**: `_trade_book_2026_clean.csv` — 2,335 trades, same composition as before
+4. **Generated clean report**: `master_backtest_report_clean.pdf` — cover, equity curve, feat importance, top/bottom trades, monthly stats
+
+### Key Insight
+The **core edge is real** — removing leakage drops Sharpe 17.5 → 11.6, but 11.6 is still extremely strong. Top features now: `60min_cum_ret`, `60min_gap_plus_ret`, `30min_gap_plus_ret`, `60min_cum_high` — all genuine checkpoint-only features.
 
 ## Session 10 (Jul 5 2026) — Data Quality Fix via Dhan Cache + Verified Top-40 Gainers
 
@@ -91,6 +118,7 @@
 - **Same-day exit mandatory**: Overnight hold Sharpe drops 4.28 → 0.21
 - **Limit entry at prev_high only**: Market entry even 0.1% above destroys edge
 - **Cancel unfilled orders by 11 AM**: 91% of crosses happen before then
+- **Never use `total_day_volume` in features**: `vol_pct` features must divide by checkpoint volume only, not full-day volume
 - Dhan cache primary data source; Angel One deprecated
 - Scanner API in Node.js (unified architecture)
 - History API uses pre-aggregated JSON cache (50x speedup)
@@ -105,3 +133,6 @@
 - `top40_gainers_verified.csv` — Verified top 40 gainers (1,600 rows)
 - `top40_gainers_verified.pdf` — Verified PDF report (254 KB, 40 days)
 - `direction_model.txt` / `big_day_model.txt` — LightGBM models
+- `_gainer_clean_model.txt` — Clean LightGBM model (no leakage)
+- `_trade_book_2026_clean.csv` — 2,335 clean trades
+- `master_backtest_report_clean.pdf` — Clean report (5 pages)

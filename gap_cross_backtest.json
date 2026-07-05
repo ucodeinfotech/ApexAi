@@ -1,0 +1,120 @@
+{
+  "results": {
+    "A: Any cross": {
+      "trades": 191624,
+      "win_rate": 38.98,
+      "avg_ret": -0.26,
+      "sharpe": -1.665,
+      "mdd": -100.0,
+      "per_year": 17420.4,
+      "avg_gap": 1.28,
+      "avg_dist": -0.12
+    },
+    "B: Intraday cross": {
+      "trades": 107156,
+      "win_rate": 40.92,
+      "avg_ret": -0.14,
+      "sharpe": -0.922,
+      "mdd": -100.0,
+      "per_year": 9741.5,
+      "avg_gap": 0.94,
+      "avg_dist": -0.9
+    },
+    "C: Anticipate (dist>-0.5%)": {
+      "trades": 44538,
+      "win_rate": 41.29,
+      "avg_ret": -0.12,
+      "sharpe": -0.852,
+      "mdd": -100.0,
+      "per_year": 4048.9,
+      "avg_gap": 0.93,
+      "avg_dist": -0.22
+    },
+    "D: Tight (dist>-0.2%)": {
+      "trades": 21518,
+      "win_rate": 41.53,
+      "avg_ret": -0.12,
+      "sharpe": -0.848,
+      "mdd": -100.0,
+      "per_year": 1956.2,
+      "avg_gap": 0.95,
+      "avg_dist": -0.08
+    },
+    "E: Gap-through": {
+      "trades": 84468,
+      "win_rate": 36.64,
+      "avg_ret": -0.41,
+      "sharpe": -2.507,
+      "mdd": -100.0,
+      "per_year": 7678.9,
+      "avg_gap": 1.7,
+      "avg_dist": 0.88
+    },
+    "F: Next-day exit": {
+      "trades": 107128,
+      "win_rate": 45.46,
+      "avg_ret": 0.05,
+      "sharpe": 0.208,
+      "mdd": -100.0
+    },
+    "G: 2ATR stop": {
+      "trades": 107156,
+      "win_rate": 40.86,
+      "avg_ret": -0.15,
+      "sharpe": -1.014,
+      "mdd": 0
+    },
+    "H: No cross (short)": {
+      "trades": 134624,
+      "win_rate": 16.68,
+      "avg_ret": -1.42,
+      "sharpe": -12.46,
+      "mdd": -100.0,
+      "per_year": 12238.5,
+      "avg_gap": 0.96,
+      "avg_dist": -2.0
+    },
+    "I: Gap 0.5-3%": {
+      "trades": 105968,
+      "win_rate": 40.91,
+      "avg_ret": -0.14,
+      "sharpe": -0.908
+    },
+    "I: Gap 0.5-5%": {
+      "trades": 107010,
+      "win_rate": 40.92,
+      "avg_ret": -0.14,
+      "sharpe": -0.916
+    },
+    "I: Gap 1-5%": {
+      "trades": 31267,
+      "win_rate": 41.19,
+      "avg_ret": -0.16,
+      "sharpe": -0.937
+    },
+    "I: Gap 1-10%": {
+      "trades": 31410,
+      "win_rate": 41.18,
+      "avg_ret": -0.17,
+      "sharpe": -0.956
+    },
+    "I: Gap 2-10%": {
+      "trades": 4645,
+      "win_rate": 42.48,
+      "avg_ret": -0.26,
+      "sharpe": -1.196
+    },
+    "I: Gap 3-15%": {
+      "trades": 1188,
+      "win_rate": 41.67,
+      "avg_ret": -0.46,
+      "sharpe": -1.771
+    },
+    "I: Gap 0.5-2%": {
+      "trades": 102508,
+      "win_rate": 40.84,
+      "avg_ret": -0.13,
+      "sharpe": -0.909
+    }
+  }
+}
